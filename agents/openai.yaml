@@ -1,0 +1,4 @@
+interface:
+  display_name: "玄学果断合参"
+  short_description: "按经典谱系做八字梅花六爻风水塔罗合参，先断语后证据。"
+  default_prompt: "用经典谱系合参，果断分析这个八字/梅花/六爻/风水/塔罗问题，并给出依据、应期和验证点。"

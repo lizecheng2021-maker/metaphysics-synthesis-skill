@@ -1,0 +1,20 @@
+# Metaphysics Synthesis Skill
+
+Codex-compatible skill for structured metaphysical analysis across BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot.
+
+Primary files:
+
+- `SKILL.md`: routing, workflow, evidence hierarchy, safety boundaries.
+- `references/bazi.md`: BaZi / Zi Ping method notes.
+- `references/meihua.md`: Meihua Yishu casting and interpretation workflow.
+- `references/liuyao.md`: Liuyao / Najia workflow.
+- `references/fengshui.md`: directional and workspace reading workflow.
+- `references/tarot.md`: Tarot reading workflow.
+- `scripts/meihua_calc.py`: deterministic Meihua Yishu calculator.
+
+Use this repository for cultural, symbolic, reflective, and strategic analysis only. Do not use it as medical, legal, financial, emergency, or safety advice.
+
+Suggested summary:
+
+Metaphysics Synthesis Skill is an AI-agent skill for decisive yet bounded Chinese and Western divination readings. It supports BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot, with method-specific references, evidence tiers, timing signals, and a Meihua calculator script.
+
