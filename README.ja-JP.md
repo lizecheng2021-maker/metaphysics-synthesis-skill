@@ -4,7 +4,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Metaphysics Synthesis Skill social card](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+![Metaphysics Synthesis Skill social card](assets/social/generated/twitter-card-ja-JP.png)
 
 形而上学総合 Skill は、AI Agent が四柱推命、梅花易数、六爻、風水方位分析、タロット解釈を構造的に扱うための再利用可能な skill パッケージです。これは単なる占いプロンプトではありません。質問を分類し、入力を確認し、適切な体系を選び、結論、根拠、時期、行動、検証ポイントを分けて出力するための手順です。Codex、Claude Code、そしてローカルファイルを参照できる他の AI Agent で利用できます。
 

@@ -4,7 +4,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Carte sociale du Skill de Synthèse Métaphysique](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+![Carte sociale du Skill de Synthèse Métaphysique](assets/social/generated/twitter-card-fr-FR.png)
 
 Le Skill de Synthèse Métaphysique est un paquet réutilisable pour AI Agents consacré au BaZi, au Meihua Yishu, au Liuyao, au Feng Shui directionnel et au Tarot. Ce n'est pas un simple prompt de divination. C'est une méthode structurée qui aide un assistant IA à choisir le bon système, vérifier les entrées, formuler un verdict, présenter les preuves, estimer le délai, proposer des actions et définir des signes de vérification. Il peut être utilisé avec Codex, Claude Code ou tout autre agent capable de lire un dossier local contenant des instructions, des références et des scripts.
 

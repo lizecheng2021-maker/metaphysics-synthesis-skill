@@ -4,7 +4,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Metaphysics Synthesis Skill social card](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+![Metaphysics Synthesis Skill social card](assets/social/generated/twitter-card-ko-KR.png)
 
 형이상학 종합 Skill은 AI Agent가 사주팔자, 매화역수, 육효, 풍수 방향 분석, 타로 리딩을 구조적으로 다루도록 돕는 재사용 가능한 skill 패키지입니다. 이 저장소는 단순한 점술 프롬프트가 아닙니다. 질문을 먼저 분류하고, 필요한 입력을 확인하고, 적합한 체계를 선택하고, 결론과 근거, 시기, 행동, 검증 신호를 분리하여 답하도록 설계된 절차입니다. Codex, Claude Code, 그리고 로컬 파일을 읽을 수 있는 다른 AI Agent 환경에서 사용할 수 있습니다.
 

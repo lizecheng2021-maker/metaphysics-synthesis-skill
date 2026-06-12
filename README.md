@@ -4,7 +4,7 @@
 [![Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Metaphysics Synthesis social card](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+![Metaphysics Synthesis Skill social card](assets/social/generated/twitter-card-en.png)
 
 Metaphysics Synthesis Skill is a portable agent skill for structured divination and symbolic reasoning. It helps AI assistants handle BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot questions with a repeatable workflow: choose the right method, check the inputs, give a clear verdict, explain the evidence, define the timing, propose actions, and list verification signals. It is designed for Codex, Claude Code, and any agent environment that can load a folder of instructions, references, and scripts.
 

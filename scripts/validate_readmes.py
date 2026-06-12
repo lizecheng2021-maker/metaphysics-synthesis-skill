@@ -41,7 +41,6 @@ REQUIRED_COMMAND_SNIPPETS = [
     "ln -sfn",
 ]
 
-SOCIAL_IMAGE = "assets/social/generated/metaphysics-synthesis-twitter-bg.png"
 SOCIAL_MARKERS = {
     "README.md": "Share On X / Twitter",
     "README.zh-CN.md": "X / Twitter 分享文案",
@@ -49,6 +48,14 @@ SOCIAL_MARKERS = {
     "README.ja-JP.md": "X / Twitter 投稿文",
     "README.fr-FR.md": "Publication X / Twitter",
     "README.es-ES.md": "Publicación para X / Twitter",
+}
+SOCIAL_IMAGES = {
+    "README.md": "assets/social/generated/twitter-card-en.png",
+    "README.zh-CN.md": "assets/social/generated/twitter-card-zh-CN.png",
+    "README.ko-KR.md": "assets/social/generated/twitter-card-ko-KR.png",
+    "README.ja-JP.md": "assets/social/generated/twitter-card-ja-JP.png",
+    "README.fr-FR.md": "assets/social/generated/twitter-card-fr-FR.png",
+    "README.es-ES.md": "assets/social/generated/twitter-card-es-ES.png",
 }
 
 
@@ -75,8 +82,11 @@ def check_readme(path: pathlib.Path, required_terms: list[str]) -> None:
         fail(f"{path.name} contains visible discoverability/internal terms: {', '.join(forbidden)}")
     if "docs/" in text:
         fail(f"{path.name} references removed docs/ directory")
-    if SOCIAL_IMAGE not in text:
-        fail(f"{path.name} missing shared social image")
+    image = SOCIAL_IMAGES[path.name]
+    if image not in text:
+        fail(f"{path.name} missing localized social image {image}")
+    if not (ROOT / image).is_file():
+        fail(f"{path.name} references missing social image file {image}")
     marker = SOCIAL_MARKERS[path.name]
     if marker not in text:
         fail(f"{path.name} missing localized X/Twitter section")

@@ -4,7 +4,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-%E7%8E%84%E5%AD%A6%E5%90%88%E5%8F%82-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![玄学合参 Skill 社交分享图](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+![玄学合参 Skill 社交分享图](assets/social/generated/twitter-card-zh-CN.png)
 
 玄学合参 Skill 是一套给 AI Agent 使用的结构化术数推演包，覆盖八字/子平命理、梅花易数、六爻/纳甲、风水方位和塔罗牌阵。它不是一段“算命提示词”，而是一套可以复用、可以安装、可以验证、可以迁移到不同 Agent 环境的工作流。它的目标很明确：让 AI 在回答玄学问题时，不再靠模糊安慰和临场发挥，而是先选体系、再验输入、再断结论、再列依据、再定应期、再给行动、最后给验证点。
 

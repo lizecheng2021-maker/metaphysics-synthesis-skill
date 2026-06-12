@@ -1,11 +1,28 @@
 # Twitter / X Launch Kit
 
-Use one unified visual identity for all languages.
+Use one unified visual identity for all languages. Each README uses a localized image with text already rendered into the card.
 
-Background image:
+Shared background image:
 
 ```text
 assets/social/generated/metaphysics-synthesis-twitter-bg.png
+```
+
+Localized ready-to-post cards:
+
+```text
+assets/social/generated/twitter-card-en.png
+assets/social/generated/twitter-card-zh-CN.png
+assets/social/generated/twitter-card-ko-KR.png
+assets/social/generated/twitter-card-ja-JP.png
+assets/social/generated/twitter-card-fr-FR.png
+assets/social/generated/twitter-card-es-ES.png
+```
+
+Regenerate cards:
+
+```bash
+python3 scripts/render_social_cards.py
 ```
 
 Recommended post image size: 1600 x 900.
