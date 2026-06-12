@@ -30,15 +30,6 @@ REQUIRED_FILES = [
     "scripts/tarot_draw.py",
     "scripts/privacy_check.py",
     "scripts/validate_readmes.py",
-    "scripts/render_social_cards.py",
-    "assets/social/twitter-skill-spec.md",
-    "assets/social/generated/metaphysics-synthesis-twitter-bg.png",
-    "assets/social/generated/twitter-card-en.png",
-    "assets/social/generated/twitter-card-zh-CN.png",
-    "assets/social/generated/twitter-card-ko-KR.png",
-    "assets/social/generated/twitter-card-ja-JP.png",
-    "assets/social/generated/twitter-card-fr-FR.png",
-    "assets/social/generated/twitter-card-es-ES.png",
 ]
 
 

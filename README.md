@@ -4,7 +4,6 @@
 [![Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Metaphysics Synthesis Skill social card](assets/social/generated/twitter-card-en.png)
 
 Metaphysics Synthesis Skill is a portable agent skill for structured divination and symbolic reasoning. It helps AI assistants handle BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot questions with a repeatable workflow: choose the right method, check the inputs, give a clear verdict, explain the evidence, define the timing, propose actions, and list verification signals. It is designed for Codex, Claude Code, and any agent environment that can load a folder of instructions, references, and scripts.
 
@@ -219,46 +218,6 @@ metaphysics-synthesis-skill/
 │   ├── privacy_check.py
 │   └── validate_skill.py
 └── README.*.md
-```
-
-## Share On X / Twitter
-
-```text
-I built an open-source Agent Skill for structured metaphysical reasoning:
-
-Metaphysics Synthesis Skill
-
-It covers:
-• BaZi / Four Pillars
-• Meihua Yishu / I Ching omen reading
-• Liuyao / Najia
-• Feng Shui direction analysis
-• Tarot spreads
-
-This is not a vague fortune-telling prompt.
-
-The goal is to make AI divination less messy and more procedural:
-1. Pick the right method for the question.
-2. Check whether the input is complete.
-3. Mark each method as runnable, partial, or blocked.
-4. Read each system internally before synthesis.
-5. Give verdict, evidence, timing, action, and verification signals.
-
-The repo includes:
-• A compact SKILL.md router
-• Method references for BaZi, Meihua, Liuyao, Feng Shui, and Tarot
-• A Meihua structure calculator
-• A reproducible Tarot draw script with seed and reversals
-• Multilingual README guides
-• Validation and privacy-check scripts
-
-It is designed for Codex, Claude Code, and any AI agent that can load a local skill folder.
-
-The interesting part is not "AI predicts fate."
-The interesting part is building a disciplined interface between symbolic systems and agent workflows.
-
-GitHub:
-https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill
 ```
 
 ## Safety And Scope

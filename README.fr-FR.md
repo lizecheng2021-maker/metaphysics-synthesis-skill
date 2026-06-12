@@ -1,29 +1,27 @@
-# Skill de Synthèse Métaphysique
+# Module de Synthèse Métaphysique
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-![Carte sociale du Skill de Synthèse Métaphysique](assets/social/generated/twitter-card-fr-FR.png)
 
-Le Skill de Synthèse Métaphysique est un paquet réutilisable pour AI Agents consacré au BaZi, au Meihua Yishu, au Liuyao, au Feng Shui directionnel et au Tarot. Ce n'est pas un simple prompt de divination. C'est une méthode structurée qui aide un assistant IA à choisir le bon système, vérifier les entrées, formuler un verdict, présenter les preuves, estimer le délai, proposer des actions et définir des signes de vérification. Il peut être utilisé avec Codex, Claude Code ou tout autre agent capable de lire un dossier local contenant des instructions, des références et des scripts.
+Le module de Synthèse Métaphysique est un paquet réutilisable pour agents d’intelligence artificielle consacré au BaZi, au Meihua Yishu, au Liuyao, au Feng Shui directionnel et au Tarot. Ce n'est pas une simple instruction de divination. C'est une méthode structurée qui aide un assistant IA à choisir le bon système, vérifier les entrées, formuler un verdict, présenter les preuves, estimer le délai, proposer des actions et définir des signes de vérification. Il peut être utilisé avec Codex, Claude Code ou tout autre agent capable de lire un dossier local contenant des instructions, des références et des scripts.
 
-La plupart des réponses de divination générées par IA deviennent trop générales. Elles mélangent astrologie chinoise, Yi King, Feng Shui et Tarot comme s'il s'agissait d'un seul langage symbolique. Elles prennent parfois un seul signe, une seule carte ou un seul conflit et en font une conclusion dramatique. Ce skill évite cette dérive. Le BaZi sert à lire la structure de vie et les cycles de chance. Le Meihua Yishu sert aux questions soudaines, aux horaires, aux nombres et aux présages. Le Liuyao sert aux résultats concrets: contrat, poste, supérieur, salaire, projet, relation spécifique. Le Feng Shui sert à lire l'espace, la direction, le soutien arrière, l'ouverture devant soi, les portes, les fenêtres, les flux et la visibilité. Le Tarot sert à lire les dynamiques psychologiques, relationnelles et décisionnelles.
+La plupart des réponses de divination générées par IA deviennent trop générales. Elles mélangent astrologie chinoise, Yi King, Feng Shui et Tarot comme s'il s'agissait d'un seul langage symbolique. Elles prennent parfois un seul signe, une seule carte ou un seul conflit et en font une conclusion dramatique. Ce module évite cette dérive. Le BaZi sert à lire la structure de vie et les cycles de chance. Le Meihua Yishu sert aux questions soudaines, aux horaires, aux nombres et aux présages. Le Liuyao sert aux résultats concrets: contrat, poste, supérieur, salaire, projet, relation spécifique. Le Feng Shui sert à lire l'espace, la direction, le soutien arrière, l'ouverture devant soi, les portes, les fenêtres, les flux et la visibilité. Le Tarot sert à lire les dynamiques psychologiques, relationnelles et décisionnelles.
 
-Le skill est conçu pour être direct sans être irresponsable. Il peut donner un verdict ferme lorsque les signes convergent, mais il marque aussi les limites. Chaque méthode peut être `runnable`, `partial` ou `blocked`. Une heure de naissance incertaine ne permet pas une lecture détaillée du pilier de l'heure. Six lignes Liuyao sans ordre clair ne permettent pas une lecture Najia complète. Une analyse Feng Shui sans plan ni boussole ne permet pas de conclure sur les formules avancées. Un tirage Tarot fourni par l'utilisateur ne doit pas être remplacé par un nouveau tirage. Cette discipline rend l'outil plus fiable et plus facile à intégrer dans des agents différents.
+Le module est conçu pour être direct sans être irresponsable. Il peut donner un verdict ferme lorsque les signes convergent, mais il marque aussi les limites. Chaque méthode peut être `runnable`, `partial` ou `blocked`. Une heure de naissance incertaine ne permet pas une lecture détaillée du pilier de l'heure. Six lignes Liuyao sans ordre clair ne permettent pas une lecture Najia complète. Une analyse Feng Shui sans plan ni boussole ne permet pas de conclure sur les formules avancées. Un tirage Tarot fourni par l'utilisateur ne doit pas être remplacé par un nouveau tirage. Cette discipline rend l'outil plus fiable et plus facile à intégrer dans des agents différents.
 
 ## Langues
 
-- [English](README.md)
-- [简体中文](README.zh-CN.md)
-- [한국어](README.ko-KR.md)
-- [日本語](README.ja-JP.md)
-- [Français](README.fr-FR.md)
-- [Español](README.es-ES.md)
+- [anglais](README.md)
+- [chinois simplifié](README.zh-CN.md)
+- [coréen](README.ko-KR.md)
+- [japonais](README.ja-JP.md)
+- [français](README.fr-FR.md)
+- [espagnol](README.es-ES.md)
 
 ## Pour qui
 
-Ce dépôt s'adresse aux personnes qui veulent donner à un agent IA une méthode stable pour traiter des questions métaphysiques sans réécrire un long prompt à chaque fois. Il est aussi utile pour créer un outil de consultation, un assistant personnel, un workflow de recherche symbolique ou un système interne de lecture structurée. Les fichiers de référence séparent les méthodes, les scripts évitent de réécrire des opérations déterministes, et les modèles de sortie permettent de garder un style clair.
+Ce dépôt s'adresse aux personnes qui veulent donner à un agent IA une méthode stable pour traiter des questions métaphysiques sans réécrire une longue instruction à chaque fois. Il est aussi utile pour créer un outil de consultation, un assistant personnel, un flux de recherche symbolique ou un système interne de lecture structurée. Les fichiers de référence séparent les méthodes, les scripts évitent de réécrire des opérations déterministes, et les modèles de sortie permettent de garder un style clair.
 
 L'objectif n'est pas de rendre la divination plus vague ou plus spectaculaire. L'objectif est de la rendre plus lisible. Une bonne réponse doit dire ce qui est fort, ce qui est faible, ce qui manque, ce qui peut être vérifié et quelle action concrète suivre. Le style peut être symbolique, mais le processus doit rester propre.
 
@@ -31,11 +29,11 @@ L'objectif n'est pas de rendre la divination plus vague ou plus spectaculaire. L
 
 | Système | Présentation d'environ 100 mots | Fichier principal |
 | --- | --- | --- |
-| [BaZi / astrologie chinoise](https://fr.wikipedia.org/wiki/Astrologie_chinoise) | Le BaZi, ou quatre piliers, utilise l'année, le mois, le jour et l'heure de naissance pour établir une structure symbolique fondée sur les troncs célestes, les branches terrestres et les cinq phases. Dans ce skill, il sert aux tendances longues: carrière, richesse, mariage, santé, cycles décennaux et déclencheurs annuels. | `references/bazi.md` |
-| [Meihua Yishu / Yi Jing](https://fr.wikipedia.org/wiki/Yi_Jing) | Le Meihua Yishu est une approche image-nombre liée au Livre des Mutations. Il est utile pour les événements proches, les signes extérieurs, les horaires, les nombres, les directions et les changements soudains. Le skill distingue l'hexagramme principal, la ligne mobile, l'hexagramme mutuel, l'hexagramme transformé et la relation Ti/Yong. | `references/meihua.md` |
-| [Liuyao / Wenwanggua](https://en.wikipedia.org/wiki/Wenwanggua) | Le Liuyao lit six lignes, les lignes mobiles, les rôles, les relations et les déclencheurs temporels pour répondre à des questions concrètes. Il convient aux contrats, promotions, supérieurs, salaires, projets et relations spécifiques. Le skill impose l'ordre de bas en haut et limite la lecture si les données Najia manquent. | `references/liuyao.md` |
-| [Feng Shui](https://fr.wikipedia.org/wiki/Feng_shui) | Le Feng Shui étudie l'orientation, la forme, les flux, le soutien arrière, les ouvertures, le bruit, la lumière et la circulation. Ce skill lit d'abord l'environnement observable avant les formules directionnelles. Il privilégie les ajustements pratiques: clarté, stabilité, attention, confidentialité et visibilité. | `references/fengshui.md` |
-| [Tarot divinatoire](https://fr.wikipedia.org/wiki/Tarot_divinatoire) | Le Tarot utilise un tirage, les positions, les images, les suites, les nombres, les cartes droites ou inversées et les relations entre cartes pour explorer psychologie, relation et choix. Ce skill permet des tirages reproductibles avec seed afin d'éviter de retirer les cartes jusqu'à obtenir une réponse agréable. | `references/tarot.md` |
+| [BaZi / astrologie chinoise](https://fr.wikipedia.org/wiki/Astrologie_chinoise) | Le BaZi, ou quatre piliers, utilise l'année, le mois, le jour et l'heure de naissance pour établir une structure symbolique fondée sur les troncs célestes, les branches terrestres et les cinq phases. Dans ce module, il sert aux tendances longues: carrière, richesse, mariage, santé, cycles décennaux et déclencheurs annuels. | `references/bazi.md` |
+| [Meihua Yishu / Yi Jing](https://fr.wikipedia.org/wiki/Yi_Jing) | Le Meihua Yishu est une approche image-nombre liée au Livre des Mutations. Il est utile pour les événements proches, les signes extérieurs, les horaires, les nombres, les directions et les changements soudains. Le module distingue l'hexagramme principal, la ligne mobile, l'hexagramme mutuel, l'hexagramme transformé et la relation Ti/Yong. | `references/meihua.md` |
+| [Liuyao / Wenwanggua](https://en.wikipedia.org/wiki/Wenwanggua) | Le Liuyao lit six lignes, les lignes mobiles, les rôles, les relations et les déclencheurs temporels pour répondre à des questions concrètes. Il convient aux contrats, promotions, supérieurs, salaires, projets et relations spécifiques. Le module impose l'ordre de bas en haut et limite la lecture si les données Najia manquent. | `references/liuyao.md` |
+| [Feng Shui](https://fr.wikipedia.org/wiki/Feng_shui) | Le Feng Shui étudie l'orientation, la forme, les flux, le soutien arrière, les ouvertures, le bruit, la lumière et la circulation. Ce module lit d'abord l'environnement observable avant les formules directionnelles. Il privilégie les ajustements pratiques: clarté, stabilité, attention, confidentialité et visibilité. | `references/fengshui.md` |
+| [Tarot divinatoire](https://fr.wikipedia.org/wiki/Tarot_divinatoire) | Le Tarot utilise un tirage, les positions, les images, les suites, les nombres, les cartes droites ou inversées et les relations entre cartes pour explorer psychologie, relation et choix. Ce module permet des tirages reproductibles avec seed afin d'éviter de retirer les cartes jusqu'à obtenir une réponse agréable. | `references/tarot.md` |
 
 ## Méthode de réponse
 
@@ -58,7 +56,7 @@ Signes de vérification :
 Hypothèses de faible confiance :
 ```
 
-## Installation pour tous les AI Agents
+## Installation pour tous les agents d’intelligence artificielle
 
 ### Installation universelle
 
@@ -72,7 +70,7 @@ python3 scripts/validate_skill.py
 Indiquez ensuite à votre agent:
 
 ```text
-Use the local skill at ~/agent-skills/metaphysics-synthesis/SKILL.md. Load only the relevant reference file for the requested system.
+Utilise le module local situé dans ~/agent-skills/metaphysics-synthesis/SKILL.md. Charge uniquement le fichier de référence adapté au système demandé.
 ```
 
 ### Codex
@@ -130,7 +128,7 @@ Analyse mon poste de travail avec la logique des directions Feng Shui. Je fais f
 ```
 
 ```text
-Fais un tirage Tarot de cinq cartes pour une décision professionnelle. Affiche le seed, les positions, les cartes droites ou inversées, le verdict, l'action et les signes de vérification.
+Fais un tirage Tarot de cinq cartes pour une décision professionnelle. Affiche le valeur de départ, les positions, les cartes droites ou inversées, le verdict, l'action et les signes de vérification.
 ```
 
 ## Scripts utiles
@@ -138,54 +136,9 @@ Fais un tirage Tarot de cinq cartes pour une décision professionnelle. Affiche 
 ```bash
 python3 scripts/meihua_calc.py time 2026 6 12 10
 python3 scripts/meihua_calc.py num 22 5 18
-python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
+python3 scripts/tarot_draw.py --spread relationship --question "Cette collaboration va-t-elle mûrir ?" --seed 42
 python3 scripts/validate_skill.py
 python3 scripts/privacy_check.py
-```
-
-## Publication X / Twitter
-
-```text
-I built an open-source Agent Skill for structured metaphysical readings:
-
-Metaphysics Synthesis Skill
-
-It covers:
-• BaZi / quatre piliers
-• Meihua Yishu / Yi Jing omen reading
-• Liuyao / Najia
-• Feng Shui direction analysis
-• Tarot tirages
-
-This is not a vague divination prompt.
-
-The idea is simple:
-AI should not mix every symbolic system into the same soft answer.
-
-BaZi has its own inputs.
-Meihua has its own timing and omen logic.
-Liuyao has its own line order and role structure.
-Feng Shui needs observable spatial facts.
-Tarot needs spread positions and card interaction.
-
-So the skill enforces a workflow:
-1. Choose the right method.
-2. Check the input.
-3. Mark the method as runnable, partial, or blocked.
-4. Interpret each system before synthesis.
-5. Give verdict, evidence, timing, action, and verification signals.
-
-The repository includes:
-• Method references
-• Meihua calculator
-• Reproducible Tarot draw script
-• Multilingual README guides
-• Validation and privacy-check scripts
-
-Works with Codex, Claude Code, and any local agent skill setup.
-
-GitHub:
-https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill
 ```
 
 ## Limites de sécurité
