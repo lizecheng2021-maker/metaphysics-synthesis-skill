@@ -22,12 +22,14 @@ REQUIRED_FILES = [
     "references/tarot.md",
     "references/router.md",
     "references/method-contracts.md",
+    "references/i18n.md",
     "references/output-templates.md",
     "references/examples.md",
     "references/sources.md",
     "scripts/meihua_calc.py",
     "scripts/tarot_draw.py",
     "scripts/privacy_check.py",
+    "scripts/validate_readmes.py",
 ]
 
 
@@ -96,12 +98,22 @@ def check_tarot_script() -> None:
             fail(f"tarot_draw.py output missing {needle}")
 
 
+def check_readmes_script() -> None:
+    cmd = [sys.executable, str(ROOT / "scripts/validate_readmes.py")]
+    result = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
+    if result.returncode != 0:
+        fail("validate_readmes.py failed: " + result.stderr.strip())
+    if "OK: multilingual README guides validated" not in result.stdout:
+        fail("validate_readmes.py did not report success")
+
+
 def main() -> None:
     check_required_files()
     check_skill_frontmatter()
     check_local_links()
     check_meihua_script()
     check_tarot_script()
+    check_readmes_script()
     print("OK: skill package validated")
 
 

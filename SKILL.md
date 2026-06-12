@@ -1,6 +1,6 @@
 ---
 name: metaphysics-synthesis
-description: Deep metaphysics synthesis and AI divination skill for Chinese and Western divination. Use when the user asks for 玄学、命理、算命、运势、八字/子平命理、BaZi reading、Chinese astrology、梅花易数/邵雍象数、Meihua Yishu、I Ching omen reading、六爻/纳甲、Liuyao/Najia、风水/方位、Feng Shui direction analysis、塔罗/Tarot reading、命运/婚恋/事业/财运/健康趋势, asks for 果断断语 or master-style metaphysical reasoning, or asks to combine divination with real-world evidence. Applies classical method lineages, decisive verdicts, evidence tiers, timing signals, and avoids one-point shallow readings.
+description: Deep metaphysics synthesis and AI divination skill for Chinese and Western divination. Use for 玄学、命理、八字/子平、梅花易数、六爻/纳甲、风水/方位、塔罗; BaZi/Four Pillars, Meihua Yishu/I Ching omen reading, Liuyao/Najia, Feng Shui, Tarot; 사주팔자/매화역수/육효/풍수/타로; 四柱推命/梅花易数/六爻/風水/タロット; BaZi/quatre piliers/Yi King/Liuyao/Feng Shui/tarot; BaZi/cuatro pilares/I Ching/Liuyao/Feng Shui/tarot. Applies decisive verdicts, evidence tiers, timing signals, localized output, and real-world calibration.
 ---
 
 # Metaphysics Synthesis
@@ -11,7 +11,7 @@ Use this skill to analyze metaphysical questions with classical lineages plus re
 
 Default boundaries:
 
-- Use Chinese unless the user asks otherwise.
+- Answer in the user's language when it is clearly Chinese, English, Korean, Japanese, French, or Spanish. If the user mixes languages, prioritize the language of the direct request. Keep commands, file paths, and classical method names exact.
 - Give a decisive verdict when the evidence converges. Do not pad with "maybe/probably" when the method is clear.
 - Distinguish high-confidence judgments, low-confidence inferences, and real-world verification signals.
 - For medicine, law, finance, death, disasters, and safety: treat divination as cultural/strategic reflection only. Give risk windows and prevention, not fatalistic certainty.
@@ -22,6 +22,7 @@ Default boundaries:
 
 Read [references/router.md](references/router.md) when the question mixes multiple systems, asks "which method should I use?", repeats a prior divination, or demands "不要串联记忆 / 单卦 / 严格按 skill".
 Read [references/method-contracts.md](references/method-contracts.md) when normalizing inputs, writing localized docs/examples, deciding whether a method is runnable, or publishing public-facing examples.
+Read [references/i18n.md](references/i18n.md) when the user asks in Korean, Japanese, French, or Spanish, or when editing multilingual README/social copy.
 
 Default routing:
 
@@ -73,6 +74,7 @@ Reliability tiers:
 - **塔罗**: Use for psychological dynamics, relationship texture, choices, and symbolic reflection, especially when a spread/cards are provided. If the user asks the assistant to draw cards, use `scripts/tarot_draw.py` and report the seed. Read [references/tarot.md](references/tarot.md).
 - **Output templates**: Read [references/output-templates.md](references/output-templates.md) when the user wants a strict format, multilingual examples, or a clean public-facing reading.
 - **Examples**: Read [references/examples.md](references/examples.md) when improving prompts, docs, or trigger coverage.
+- **Internationalization**: Read [references/i18n.md](references/i18n.md) when localizing output labels, method names, social copy, or public examples.
 
 ## Workflow
 
