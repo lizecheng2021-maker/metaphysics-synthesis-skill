@@ -1,10 +1,14 @@
 # Metaphysics Synthesis Skill
 
-An AI agent skill for structured divination, Chinese metaphysics, BaZi reading, Meihua Yishu, Liuyao, Feng Shui direction analysis, and Tarot interpretation.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
+[![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-This repository packages a Codex-compatible and Agent Skills-compatible workflow for assistants that need decisive but bounded metaphysical readings. It combines classical Chinese systems and Western Tarot with a repeatable workflow: verdict, evidence, timing, action, and verification.
+Metaphysics Synthesis Skill is a portable agent skill for structured divination and symbolic reasoning. It helps AI assistants handle BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot questions with a repeatable workflow: choose the right method, check the inputs, give a clear verdict, explain the evidence, define the timing, propose actions, and list verification signals. It is designed for Codex, Claude Code, and any agent environment that can load a folder of instructions, references, and scripts.
 
-> Cultural and reflective use only. This skill does not replace medical, legal, financial, mental-health, emergency, or safety advice.
+This project is not a generic fortune-telling prompt. A generic prompt often collapses every system into the same vague style: a little comfort, a few symbolic words, and no falsifiable path. This skill does the opposite. It keeps each tradition internally coherent before synthesis. BaZi is used for life structure and luck cycles; Meihua Yishu is used for sudden events, omens, and near-term movement; Liuyao is used for concrete outcomes and process questions; Feng Shui is used for space, direction, and environmental support; Tarot is used for relationship dynamics, psychological texture, and decision reflection. When several systems are combined, each system speaks first, and only overlapping signals become the final synthesis.
+
+The skill is decisive but bounded. It can say "this is the dominant reading" when the evidence converges, but it also marks uncertainty. It distinguishes runnable methods, partial readings, and blocked readings. It does not pretend that missing birth data, unclear line order, an unmeasured compass direction, or an undefined Tarot spread can produce a full professional judgment. It also treats medical, legal, investment, disaster, death, and personal-safety questions as cultural reflection only, not professional advice.
 
 ## Languages
 
@@ -15,137 +19,180 @@ This repository packages a Codex-compatible and Agent Skills-compatible workflow
 - [Français](README.fr-FR.md)
 - [Español](README.es-ES.md)
 
-## What This Skill Is For
+## Why This Skill Exists
 
-Use this skill when an AI assistant needs a reusable workflow for questions such as:
+AI assistants can imitate metaphysical language easily, but stable divination requires procedure. If the user asks a BaZi question, the assistant must know whether the birth time is solar or lunar, whether the location and timezone matter, whether the hour pillar is reliable, and whether a claim belongs to the natal chart, decade luck, annual trigger, or real-world condition. If the user asks a Meihua Yishu question, the assistant must know the casting source: time, numbers, object, sound, direction, or outer omen. If the user asks a Liuyao question, the assistant must know the line order from bottom to top and whether Najia details can be established. If the user asks Feng Shui, the assistant must start from observable form before jumping to formulas. If the user asks Tarot, the assistant must respect the spread and avoid redrawing until the answer feels pleasant.
 
-- "How do I analyze a BaZi chart for career, wealth, marriage, and health timing?"
-- "Can Meihua Yishu read an omen, a timestamp, or sudden event movement?"
-- "How should Liuyao handle a concrete outcome involving a job, contract, boss, salary, or product launch?"
-- "Can Feng Shui direction analysis explain workspace visibility, seating, and environmental flow?"
-- "How can Tarot describe relationship dynamics, choices, and psychological turning points?"
-- "How can an AI agent give a decisive divination reading without becoming vague, fatalistic, or unsafe?"
-
-## Why This Skill
-
-Most AI divination prompts fail in one of two ways: they either comfort the user with vague language, or they overfit one symbol into a dramatic prediction. This skill is designed to avoid both.
-
-It enforces a repeatable method:
-
-- Choose the right system before interpreting.
-- Keep BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot internally coherent before synthesis.
-- Give a clear verdict first when the evidence converges.
-- Show a method-grade audit trail without exposing private chain-of-thought.
-- Separate high-confidence judgment from low-confidence inference.
-- Use real-world facts and measurable signals to calibrate symbolic readings.
-- Avoid repeatedly recasting the same unchanged question.
+This repository turns those rules into a reusable package. The root `SKILL.md` is the routing layer. The `references/` directory holds method-specific rules. The `scripts/` directory contains deterministic helpers for repeated operations, including Meihua structure calculation, reproducible Tarot draws, package validation, and public-release privacy checks. The result is a skill that can be installed into one agent, copied to another, or used manually as a reference workflow.
 
 ## Supported Systems
 
-| System | Best For | Reference |
+| System | 100-word overview | Main reference |
 | --- | --- | --- |
-| BaZi / Zi Ping | Life structure, decade luck, career, wealth, marriage, health tendencies | `references/bazi.md` |
-| Meihua Yishu | Omens, timestamps, sudden events, practical timing, near-term movement | `references/meihua.md` |
-| Liuyao / Najia | Concrete outcomes, roles, contracts, bosses, salary, product traction | `references/liuyao.md` |
-| Feng Shui / Direction | Workspace layout, directions, seating, doors, flow, visibility | `references/fengshui.md` |
-| Tarot | Relationship texture, psychology, choices, symbolic reflection | `references/tarot.md` |
+| [BaZi / Four Pillars of Destiny](https://en.wikipedia.org/wiki/Four_Pillars_of_Destiny) | BaZi, also called Four Pillars, reads the year, month, day, and hour of birth as stem-branch pillars. In this skill it is used for long-range structure: temperament, career tendency, wealth rhythm, relationship timing, health tendency, decade luck, and annual triggers. The workflow separates calculable chart facts from interpretation, so the assistant does not invent details when birth data is incomplete. | `references/bazi.md` |
+| [Meihua Yishu / I Ching omen reading](https://en.wikipedia.org/wiki/I_Ching) | Meihua Yishu is a practical image-number approach connected with the Book of Changes. It is strongest for near-term movement, sudden questions, timestamps, numbers, outer omens, directions, and symbolic changes. The skill treats the main hexagram, moving line, mutual hexagram, changed hexagram, Ti/Yong relation, and external omen as separate evidence layers. | `references/meihua.md` |
+| [Liuyao / Wenwanggua / Najia](https://en.wikipedia.org/wiki/Wenwanggua) | Liuyao reads six lines and their changes for concrete outcomes. It is useful for promotions, contracts, bosses, salary, projects, product traction, relationships with a specific person, and process blockers. The skill requires bottom-to-top line order and marks the reading partial if month/day, Najia, six relatives, six spirits, or 世应 cannot be established. | `references/liuyao.md` |
+| [Feng Shui](https://en.wikipedia.org/wiki/Feng_shui) | Feng Shui studies how place, orientation, flow, backing, openings, pressure lines, and symbolic directions affect lived experience. In this skill, form comes first: wall, door, window, aisle, noise, glare, privacy, and movement. Compass formulas are used only when enough data exists. The output focuses on practical adjustments rather than expensive cures. | `references/fengshui.md` |
+| [Tarot](https://en.wikipedia.org/wiki/Tarot) | Tarot uses a card spread to explore relationship dynamics, choices, psychological pressure, obstacles, turning points, and symbolic outcomes. The skill defaults to Rider-Waite-Smith style interpretation unless another deck is specified. It reads position, imagery, suits, elements, card interaction, upright/reversed orientation, and the anchor card before giving a verdict. | `references/tarot.md` |
 
-## Key Features
+## How The Skill Works
 
-- Decisive output pattern: verdict, evidence, timing, action, and verification.
-- Evidence hierarchy for conflicting symbolic signals.
-- System selection rules for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot.
-- Unified input and method status cards: `runnable`, `partial`, or `blocked`.
-- Router reference for choosing the right method and preventing cross-reading contamination.
-- Strict output templates for single-system readings and multi-system synthesis.
-- Localized prompt examples and trigger terms for Chinese, English, Korean, Japanese, French, and Spanish.
-- Deterministic Meihua Yishu calculator for main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
-- Reproducible Tarot draw helper with spread, seed, card positions, and upright/reversed output.
-- Privacy scan script for public examples before publishing.
-- Lightweight validation script for skill package health checks.
-- Safety boundaries for medical, legal, financial, death, disaster, and personal safety topics.
-- Progressive disclosure: a compact `SKILL.md`, detailed method files in `references/`, and executable support in `scripts/`.
-- AI-readable `llms.txt` summary for agent and answer-engine discovery.
+The workflow follows five decisions:
 
-## Install
+1. Identify the real question. If the prompt mixes unrelated targets, split them.
+2. Select the method that fits the question. Life arc goes to BaZi; sudden movement to Meihua; concrete yes/no or process to Liuyao; environment to Feng Shui; psychological dynamics to Tarot.
+3. Validate the inputs. Missing data is marked instead of silently filled.
+4. Produce method-level judgment before synthesis.
+5. Give the final answer with verdict, evidence, timing, action, and verification.
 
-Clone this repository into your Codex skills directory:
+The default answer shape is:
+
+```text
+Verdict:
+Evidence:
+Timing / strength:
+Action:
+Verification signals:
+Low-confidence inferences:
+```
+
+For strict single-method readings, the assistant uses:
+
+```text
+System used:
+Verdict:
+Main evidence:
+Conflict:
+Timing / number:
+Action:
+Verification:
+Confidence tier:
+```
+
+## Installation For Different Agents
+
+The repository can be used in any agent that can read local files. Some tools have a dedicated skill directory. Other tools can use a neutral folder and an instruction that points to `SKILL.md`.
+
+### Universal Clone
+
+Use this when you want one copy that any agent can reference:
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+cd ~/agent-skills/metaphysics-synthesis
+python3 scripts/validate_skill.py
+```
+
+Then tell your agent:
+
+```text
+Use the local skill at ~/agent-skills/metaphysics-synthesis/SKILL.md. Load only the relevant reference file for the requested system.
+```
+
+### Codex
 
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.codex/skills/metaphysics-synthesis
+python3 ~/.codex/skills/metaphysics-synthesis/scripts/validate_skill.py
 ```
 
-Restart Codex or reload skills if your environment requires it.
+Restart or reload Codex if your environment requires it.
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.claude/skills/metaphysics-synthesis
+python3 ~/.claude/skills/metaphysics-synthesis/scripts/validate_skill.py
+```
+
+If your Claude environment uses a different skills directory, clone into that directory or create a symbolic link.
+
+### Generic Skill Directory
+
+For any agent with a custom skills folder:
+
+```bash
+AGENT_SKILLS_DIR="$HOME/.your-agent/skills"
+mkdir -p "$AGENT_SKILLS_DIR"
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git "$AGENT_SKILLS_DIR/metaphysics-synthesis"
+python3 "$AGENT_SKILLS_DIR/metaphysics-synthesis/scripts/validate_skill.py"
+```
+
+### Symlink From A Shared Copy
+
+Use this if you want one shared repository but several agents:
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+
+mkdir -p ~/.codex/skills ~/.claude/skills
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.codex/skills/metaphysics-synthesis
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.claude/skills/metaphysics-synthesis
+```
 
 ## Usage Examples
 
-### BaZi Reading Example
+### BaZi
 
 ```text
-Analyze this BaZi chart for 2026-2036 career and wealth timing. Separate natal structure, decade luck, annual triggers, high-confidence conclusions, and low-confidence speculation.
+Analyze this BaZi chart for career, wealth, marriage, and health tendencies from 2026 to 2036. Separate natal structure, decade luck, annual triggers, high-confidence conclusions, and low-confidence speculation.
 ```
 
-### Meihua Yishu Example
+### Meihua Yishu
 
 ```text
 Use Meihua Yishu to read whether this product launch can create a visible career breakthrough. The question arose at 2026-06-12 10:36, and the external omen was a manager discussing scheduling in the northwest direction.
 ```
 
-### Liuyao Example
+### Liuyao
 
 ```text
-Use Liuyao to judge whether this project can become the main evidence for a promotion. The six lines from bottom to top are 5 / 4 / 25 / 12 / 22 / 17.
+Use Liuyao to judge whether this project can become the main evidence for a promotion. The six lines from bottom to top are 5 / 4 / 25 / 12 / 22 / 17. Do not use previous readings.
 ```
 
-### Feng Shui Example
+### Feng Shui
 
 ```text
 Analyze this workstation layout with Feng Shui direction logic. My seat faces southeast, my direct manager sits northwest, a senior leader sits south, and a cross-team manager sits east.
 ```
 
-### Tarot Example
+### Tarot
 
 ```text
 Draw a five-card Tarot spread for a career decision. Show the seed, card positions, upright/reversed cards, verdict, action, and verification signs.
 ```
 
-## Meihua Yishu Calculator
+## Scripts
 
-The helper script calculates structure only. Interpretation remains in `references/meihua.md`.
+### Meihua Structure Calculator
 
-```bash
-# Solar convention used by this skill
-python scripts/meihua_calc.py time 2026 6 12 10
-
-# Classic lunar-branch mode when lunar data is already known
-python scripts/meihua_calc.py classic 7 4 27 10
-
-# Number casting
-python scripts/meihua_calc.py num 22 5 18
-```
-
-Output includes main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
-
-## Tarot Draw Helper
-
-The helper script provides reproducible symbolic draws. It outputs card names only, not copyrighted art or long card text.
+The helper calculates structure only. Interpretation remains in the reference workflow.
 
 ```bash
-python scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
-python scripts/tarot_draw.py --spread five --question "Career decision" --json
+python3 scripts/meihua_calc.py time 2026 6 12 10
+python3 scripts/meihua_calc.py classic 7 4 27 10
+python3 scripts/meihua_calc.py num 22 5 18
 ```
 
-## Validate the Skill
+### Tarot Draw Helper
 
-Run the local validator after editing files:
+The Tarot helper creates reproducible symbolic draws. It outputs card names, spread positions, orientation, seed, and timestamp.
 
 ```bash
-python scripts/validate_skill.py
-python scripts/privacy_check.py
+python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
+python3 scripts/tarot_draw.py --spread five --question "Career decision" --json
 ```
 
-The validator checks required files, `SKILL.md` frontmatter, local reference links, and script smoke tests. The privacy scan blocks accidental publication of private names, workplace facts, family facts, tokens, or sensitive details.
+### Validate The Package
+
+```bash
+python3 scripts/validate_skill.py
+python3 scripts/privacy_check.py
+```
 
 ## Repository Structure
 
@@ -164,32 +211,18 @@ metaphysics-synthesis-skill/
 │   ├── examples.md
 │   ├── sources.md
 │   └── tarot.md
-├── scripts/meihua_calc.py
-├── scripts/tarot_draw.py
-├── scripts/privacy_check.py
-├── scripts/validate_skill.py
-├── llms.txt
+├── scripts/
+│   ├── meihua_calc.py
+│   ├── tarot_draw.py
+│   ├── privacy_check.py
+│   └── validate_skill.py
 └── README.*.md
 ```
 
-## Search Keywords
+## Safety And Scope
 
-AI divination skill, Codex divination skill, AI agent skill for metaphysics, BaZi AI assistant, BaZi reading prompt, Chinese astrology AI, Meihua Yishu calculator, I Ching omen reading, Liuyao divination workflow, Najia six lines reading, Feng Shui direction analysis, Tarot AI prompt, Tarot reading workflow, Chinese metaphysics skill, fortune telling AI assistant, astrology and divination agent skill.
-
-## For AI Assistants
-
-If you are an AI assistant reading this repository:
-
-1. Load `SKILL.md` first.
-2. Load only the relevant reference file for the user's selected system.
-3. Use `scripts/meihua_calc.py` only to verify Meihua Yishu structure.
-4. Keep readings bounded, falsifiable, and calibrated against known facts.
-5. Never use symbolic inference to override professional advice or direct evidence.
-
-## Safety
-
-This project treats divination as a cultural, reflective, symbolic, and strategic reasoning framework. It should not be used to make deterministic claims about death, disaster, medical outcomes, legal outcomes, investment returns, or personal safety.
+This repository treats divination as a cultural, reflective, symbolic, and strategic reasoning framework. It should not be used to make deterministic claims about death, disasters, medical outcomes, legal outcomes, investment returns, or personal safety. If a question touches health, law, money, emergency response, or self-harm risk, use qualified professionals and direct evidence first.
 
 ## License
 
-MIT License. See `LICENSE`.
+MIT License. See [LICENSE](LICENSE).

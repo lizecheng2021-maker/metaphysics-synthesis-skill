@@ -1,89 +1,150 @@
 # Skill de Síntesis Metafísica
 
-Un skill para Codex y AI Agent enfocado en BaZi, Meihua Yishu, Liuyao, análisis direccional de Feng Shui y lectura de Tarot.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
+[![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-Este repositorio no es solo un prompt de adivinación. Es un método reutilizable para que un asistente de IA elija el sistema correcto, dé un veredicto, muestre evidencia, estime el tiempo, proponga acciones y defina señales de verificación.
+El Skill de Síntesis Metafísica es un paquete reutilizable para AI Agents enfocado en BaZi, Meihua Yishu, Liuyao, análisis direccional de Feng Shui y lectura de Tarot. No es solo un prompt de adivinación. Es un flujo de trabajo estructurado que ayuda a un asistente de IA a elegir el sistema correcto, revisar las entradas, dar un veredicto, mostrar la evidencia, estimar el tiempo, proponer acciones y definir señales de verificación. Puede usarse con Codex, Claude Code o cualquier otro agente que pueda leer una carpeta local con instrucciones, referencias y scripts.
 
-> Uso cultural, reflexivo y estratégico únicamente. Este skill no sustituye consejos médicos, legales, financieros, psicológicos, de emergencia o de seguridad.
+Muchas respuestas de adivinación generadas por IA se vuelven demasiado vagas. Mezclan astrología china, I Ching, Feng Shui y Tarot como si fueran el mismo lenguaje. A veces toman una sola señal, una sola carta o una sola oposición y la convierten en una conclusión enorme. Este skill evita ese error. BaZi se usa para estructura de vida, ciclos de diez años, carrera, riqueza, matrimonio y salud. Meihua Yishu se usa para eventos cercanos, horarios, números, presagios y movimiento inmediato. Liuyao se usa para resultados concretos: contrato, puesto, jefe, salario, proyecto o relación específica. Feng Shui se usa para espacio, dirección, respaldo, puertas, ventanas, flujo, visibilidad y presión ambiental. Tarot se usa para dinámica psicológica, relaciones, decisiones y puntos de giro simbólicos.
 
-## Búsquedas objetivo
+El skill busca respuestas claras, pero no falsas certezas. Cada método se marca como `runnable`, `partial` o `blocked`. Si la hora de nacimiento no es segura, no se fuerza una lectura detallada del pilar de la hora. Si las seis líneas de Liuyao no tienen orden claro, la lectura Najia se limita. Si no hay plano ni brújula, el Feng Shui no se presenta como lectura profesional completa. Si el usuario ya dio cartas de Tarot, no se vuelven a sacar. Si el agente hace una tirada, el seed queda visible para que el resultado sea reproducible.
 
-- skill de adivinación con IA
-- skill Codex para BaZi
-- asistente IA de astrología china
-- lectura BaZi cuatro pilares
-- calculadora Meihua Yishu
-- I Ching presagio Meihua
-- flujo Liuyao para IA
-- seis líneas Najia
-- análisis Feng Shui de direcciones
-- Feng Shui oficina puesto de trabajo
-- prompt de Tarot con IA
-- tirada de tarot carta invertida
-- skill de metafísica china para agentes IA
+## Idiomas
+
+- [English](README.md)
+- [简体中文](README.zh-CN.md)
+- [한국어](README.ko-KR.md)
+- [日本語](README.ja-JP.md)
+- [Français](README.fr-FR.md)
+- [Español](README.es-ES.md)
+
+## Para quién es
+
+Este repositorio es para usuarios que quieren dar a un AI Agent un método estable para responder preguntas metafísicas sin escribir un prompt largo cada vez. También sirve como base para productos de consulta, asistentes personales, flujos internos de lectura simbólica o herramientas educativas sobre sistemas de adivinación. Los archivos de referencia mantienen cada método separado, los scripts evitan repetir operaciones deterministas y las plantillas de salida mantienen la respuesta clara.
+
+La meta no es hacer la lectura más misteriosa. La meta es hacerla más legible. Una buena lectura debe decir cuál es la conclusión dominante, qué evidencia la sostiene, qué parte es débil, qué falta, qué puede verificarse y qué acción concreta se recomienda. El lenguaje puede ser simbólico, pero el proceso debe ser limpio.
 
 ## Sistemas compatibles
 
-| Sistema | Mejor para | Archivo |
+| Sistema | Resumen de unas 100 palabras | Archivo principal |
 | --- | --- | --- |
-| BaZi / Zi Ping | Estructura de vida, ciclos de diez años, carrera, riqueza, matrimonio, salud | `references/bazi.md` |
-| Meihua Yishu | Presagios, horarios, eventos repentinos, movimiento de corto plazo | `references/meihua.md` |
-| Liuyao / Najia | Contratos, puesto, jefe, salario, tracción de producto, resultado concreto | `references/liuyao.md` |
-| Feng Shui / Dirección | Puesto de trabajo, orientación, puertas, ventanas, flujo, visibilidad | `references/fengshui.md` |
-| Tarot | Dinámica relacional, psicología, decisiones, punto de giro simbólico | `references/tarot.md` |
+| [BaZi / astrología china](https://es.wikipedia.org/wiki/Astrolog%C3%ADa_china) | BaZi, o Cuatro Pilares, usa año, mes, día y hora de nacimiento para construir una estructura simbólica basada en tallos celestiales, ramas terrestres y cinco fases. En este skill se usa para tendencias de vida: carrera, riqueza, matrimonio, salud, ciclos decenales y activadores anuales. | `references/bazi.md` |
+| [Meihua Yishu / I Ching](https://es.wikipedia.org/wiki/I_Ching) | Meihua Yishu es una lectura de imagen y número vinculada al Libro de los Cambios. Sirve para eventos próximos, horarios, números, direcciones, presagios y cambios repentinos. El skill distingue hexagrama principal, línea móvil, hexagrama mutuo, hexagrama transformado y relación Ti/Yong. | `references/meihua.md` |
+| [Liuyao / Wenwanggua](https://en.wikipedia.org/wiki/Wenwanggua) | Liuyao lee seis líneas, líneas móviles, roles, relación con la otra parte y disparadores temporales para responder preguntas concretas. Es útil para contratos, ascensos, jefes, salarios, proyectos y relaciones específicas. El skill exige orden de abajo hacia arriba y limita la lectura si faltan datos Najia. | `references/liuyao.md` |
+| [Feng Shui](https://es.wikipedia.org/wiki/Feng_shui) | Feng Shui estudia orientación, forma, flujo, respaldo, apertura, ruido, luz, privacidad y movimiento dentro de un espacio. Este skill lee primero el entorno observable y luego la simbología direccional. Prioriza ajustes prácticos sobre remedios caros o afirmaciones imposibles de verificar. | `references/fengshui.md` |
+| [Tarot](https://es.wikipedia.org/wiki/Tarot) | Tarot usa una tirada, posiciones, imágenes, palos, números, cartas derechas o invertidas y relaciones entre cartas para explorar psicología, vínculos y decisiones. Este skill permite tiradas reproducibles con seed, evitando repetir la tirada hasta obtener una respuesta agradable. | `references/tarot.md` |
 
-## Funciones principales
+## Método de respuesta
 
-- Separa veredicto, evidencia, tiempo, acción y puntos de verificación.
-- Distingue conclusiones de alta confianza de inferencias de baja confianza.
-- Analiza cada sistema por separado antes de sintetizar.
-- Marca cada método como `runnable`, `partial` o `blocked`.
-- Separa los datos calculables de BaZi de la interpretación.
-- Fija las entradas de Meihua Yishu: hora, números y presagio externo.
-- Mantiene las seis líneas Liuyao en orden de abajo hacia arriba.
-- Lee Feng Shui por forma y entorno antes de fórmulas direccionales.
-- Proporciona tiradas de Tarot reproducibles con spread, seed y cartas derechas/invertidas.
-- Incluye un script para calcular la estructura de Meihua Yishu.
-- Incluye un script de tirada Tarot y un control de privacidad antes de publicar.
-- Define límites de seguridad para temas sensibles.
+1. Reformular la pregunta real.
+2. Elegir el sistema adecuado.
+3. Revisar si las entradas son suficientes.
+4. Marcar el método como `runnable`, `partial` o `blocked`.
+5. Leer cada sistema por separado antes de sintetizar.
+6. Sintetizar solo las señales compatibles.
+7. Responder con veredicto, evidencia, tiempo, acción y señales de verificación.
 
-## Instalación
+Formato típico:
+
+```text
+Veredicto:
+Evidencia:
+Tiempo / fuerza:
+Acción:
+Señales de verificación:
+Inferencias de baja confianza:
+```
+
+## Instalación para cualquier AI Agent
+
+### Instalación universal
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+cd ~/agent-skills/metaphysics-synthesis
+python3 scripts/validate_skill.py
+```
+
+Luego indique al agente:
+
+```text
+Use the local skill at ~/agent-skills/metaphysics-synthesis/SKILL.md. Load only the relevant reference file for the requested system.
+```
+
+### Codex
 
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.codex/skills/metaphysics-synthesis
+python3 ~/.codex/skills/metaphysics-synthesis/scripts/validate_skill.py
 ```
 
-Reinicia Codex o recarga los skills si tu entorno lo requiere.
+### Claude Code
 
-## Ejemplos en español
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.claude/skills/metaphysics-synthesis
+python3 ~/.claude/skills/metaphysics-synthesis/scripts/validate_skill.py
+```
 
-### Ejemplo BaZi
+### Carpeta personalizada
+
+```bash
+AGENT_SKILLS_DIR="$HOME/.your-agent/skills"
+mkdir -p "$AGENT_SKILLS_DIR"
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git "$AGENT_SKILLS_DIR/metaphysics-synthesis"
+python3 "$AGENT_SKILLS_DIR/metaphysics-synthesis/scripts/validate_skill.py"
+```
+
+### Una copia compartida por varios agentes
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+
+mkdir -p ~/.codex/skills ~/.claude/skills
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.codex/skills/metaphysics-synthesis
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.claude/skills/metaphysics-synthesis
+```
+
+## Ejemplos
 
 ```text
 Analiza esta carta BaZi para carrera y riqueza entre 2026 y 2036. Separa estructura natal, suerte decenal, activadores anuales, conclusiones de alta confianza e inferencias de baja confianza.
 ```
 
-### Ejemplo Meihua Yishu
-
 ```text
 Usa Meihua Yishu para leer si este lanzamiento de producto puede crear un avance visible en mi carrera. La pregunta surgió el 2026-06-12 a las 10:36, y el presagio externo fue un gerente hablando de planificación al noroeste.
 ```
-
-### Ejemplo Liuyao
 
 ```text
 Usa Liuyao para juzgar si este proyecto puede convertirse en la evidencia principal para una promoción. Las seis líneas de abajo hacia arriba son 5 / 4 / 25 / 12 / 22 / 17.
 ```
 
-### Ejemplo Feng Shui
-
 ```text
 Analiza mi puesto de trabajo con lógica de direcciones Feng Shui. Estoy mirando al sureste, mi gerente directo está al noroeste, el líder principal está al sur y otro gerente está al este.
 ```
 
-### Ejemplo Tarot
-
 ```text
-Usa una tirada de siete cartas de Tarot para leer solo la dinámica de la relación. Da la carta central, el obstáculo, el punto de giro, la acción probable y las señales de verificación.
+Haz una tirada de Tarot de cinco cartas para una decisión profesional. Muestra seed, posiciones, cartas derechas o invertidas, veredicto, acción y señales de verificación.
 ```
+
+## Scripts útiles
+
+```bash
+python3 scripts/meihua_calc.py time 2026 6 12 10
+python3 scripts/meihua_calc.py num 22 5 18
+python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
+python3 scripts/validate_skill.py
+python3 scripts/privacy_check.py
+```
+
+## Límites de seguridad
+
+Este repositorio trata la adivinación como un marco cultural, simbólico, reflexivo y estratégico. No sustituye consejos médicos, legales, financieros, psicológicos, de emergencia o de seguridad. En temas de alto riesgo, use primero evidencia directa y profesionales cualificados.
+
+## Licencia
+
+MIT License. Consulte [LICENSE](LICENSE).

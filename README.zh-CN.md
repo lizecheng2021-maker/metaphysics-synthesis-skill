@@ -1,123 +1,219 @@
 # 玄学合参 Skill
 
-面向 Codex 和 AI Agent 的玄学、命理、八字、梅花易数、六爻、风水、塔罗合参技能。
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-%E7%8E%84%E5%AD%A6%E5%90%88%E5%8F%82-6f42c1)](SKILL.md)
+[![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
-这个仓库不是简单的“算命提示词”，而是一套可复用的玄学分析流程：先选体系，再给断语，再列依据，再定应期，再给行动，再设验证点。它适合想让 AI 助手稳定处理八字命盘、梅花易数外应、六爻成败、风水方位、塔罗关系动力的人，也适合 Codex、Claude Code、Cursor 等 Agent Skills 兼容环境参考。
+玄学合参 Skill 是一套给 AI Agent 使用的结构化术数推演包，覆盖八字/子平命理、梅花易数、六爻/纳甲、风水方位和塔罗牌阵。它不是一段“算命提示词”，而是一套可以复用、可以安装、可以验证、可以迁移到不同 Agent 环境的工作流。它的目标很明确：让 AI 在回答玄学问题时，不再靠模糊安慰和临场发挥，而是先选体系、再验输入、再断结论、再列依据、再定应期、再给行动、最后给验证点。
 
-> 仅作文化、反思和策略参考。不能替代医疗、法律、投资、心理健康、紧急情况或安全建议。
+很多 AI 的玄学回答会犯两个错误。第一，把所有系统混在一起，把八字、塔罗、易经、风水都说成同一种“感觉”；第二，抓住一个符号就无限展开，比如看到一个冲、一个动爻、一张塔牌，就直接下很大的判断。这个 Skill 的设计刚好反过来：每个体系先内部自洽，再做合参。八字看人生结构和大运流年；梅花看起心动念、外应、时间和近事变化；六爻看具体成败、流程、角色和阻力；风水看空间方位、动线、背靠、可见度和环境压力；塔罗看关系动力、心理结构、选择分歧和象征转折。
 
-## 适合什么搜索
+它也不是让 AI 变得玄乎，而是让 AI 更有边界。输入不足时，它会标记为“可部分判断”或“阻塞”，而不是硬编。出生时间不准，就不硬断时柱细节；六爻顺序不明，就不硬做纳甲细断；风水没有罗盘和户型，就不硬讲飞星；塔罗没有牌阵，就先确认或使用可复现抽牌脚本。它能给果断断语，但不会把文化推演说成科学事实，也不会替代医疗、法律、投资、心理健康和安全建议。
 
-如果你在找这些内容，这个 skill 就是为这类长尾问题设计的：
+## 多语言版本
 
-- AI 八字分析 skill
-- Codex 玄学 skill
-- 八字命理 AI 助手
-- 梅花易数起卦脚本
-- 六爻占卜 AI 工作流
-- 风水方位分析提示词
-- 塔罗牌 AI 解读提示词
-- 命理、事业、财运、婚姻、健康趋势合参
-- 邵雍象数、梅花易数、纳甲六爻、子平八字综合分析
+- [English](README.md)
+- [简体中文](README.zh-CN.md)
+- [한국어](README.ko-KR.md)
+- [日本語](README.ja-JP.md)
+- [Français](README.fr-FR.md)
+- [Español](README.es-ES.md)
+
+## 适合谁使用
+
+这个仓库适合三类人。
+
+第一类，是想让 Codex、Claude Code 或其他 AI Agent 稳定处理玄学问题的人。你不需要每次把方法论重新写一遍，只要把这个 Skill 放进 Agent 能读取的位置，Agent 就能按 `SKILL.md` 和 `references/` 里的流程执行。
+
+第二类，是想把八字、梅花、六爻、风水、塔罗做成结构化产品的人。你可以把这里的路由、输入契约、输出模板、脚本和隐私扫描当作基础模板，再接自己的排盘工具、前端页面或自动化流程。
+
+第三类，是对术数感兴趣但又不希望 AI 胡说的人。这个仓库的思路不是“越神秘越好”，而是“越可复核越好”：断语可以果断，依据必须可看；应期可以明确，验证点必须可追踪；合参可以综合，但每个体系的原始范围不能被改写。
 
 ## 支持体系
 
-| 体系 | 适合问题 | 文件 |
+| 体系 | 约 100 字介绍 | 主要文件 |
 | --- | --- | --- |
-| 八字 / 子平 | 人生结构、大运流年、事业财运、婚恋健康趋势 | `references/bazi.md` |
-| 梅花易数 | 突发事件、外应、近事应期、当前什么在动 | `references/meihua.md` |
-| 六爻 / 纳甲 | 职位、合同、老板、薪资、产品起量、具体关系成败 | `references/liuyao.md` |
-| 风水 / 方位 | 工位、朝向、领导位置、门窗气口、空间可见度 | `references/fengshui.md` |
-| 塔罗 | 关系动力、心理结构、选择、转折点、象征性反思 | `references/tarot.md` |
+| [八字命学 / 子平法](https://zh.wikipedia.org/zh-cn/%E5%85%AB%E5%AD%97%E5%91%BD%E5%AD%A6) | 八字以出生年月日时形成四柱，每柱由天干地支组成，用来观察命局结构、大运流年、事业财运、婚恋健康等长期趋势。本 Skill 会先区分排盘事实和解释，不会在出生时间、历法或地点不清楚时硬断细节。 | `references/bazi.md` |
+| [梅花易数 / 邵雍象数](https://zh.wikipedia.org/zh-cn/%E9%82%B5%E9%9B%8D) | 梅花易数重视起心动念、时间、数字、声音、方位、外应和卦象变化，适合看近事、突发事件、项目推进和当下什么在动。本 Skill 会拆分主卦、动爻、互卦、变卦、体用生克和外应，不用一个象乱断全部。 | `references/meihua.md` |
+| [六爻神卦 / 纳甲六爻](https://zh.wikipedia.org/zh-cn/%E5%85%AD%E7%88%BB%E7%A5%9E%E5%8D%A6) | 六爻以六条爻和动变关系判断具体事情的成败、阻力、角色和时间，适合职位、合同、老板、薪资、产品数据、关系成败等问题。本 Skill 强制确认初爻到上爻的顺序，纳甲信息不足时只做有限判断。 | `references/liuyao.md` |
+| [风水 / 方位](https://zh.wikipedia.org/zh-cn/%E9%A3%8E%E6%B0%B4) | 风水关注环境、方位、气口、动线、背靠、明堂、门窗、噪声和可见度。这个 Skill 先看真实空间形势，再看八卦方位和理气，不鼓励昂贵迷信改造，重点是让环境更支持注意力、稳定性和可见度。 | `references/fengshui.md` |
+| [塔罗牌](https://zh.wikipedia.org/zh-cn/%E5%A1%94%E7%BD%97%E7%89%8C) | 塔罗通过牌阵、牌位、图像、正逆位、元素和牌间关系观察心理动力、关系互动、选择分歧和象征性结果。本 Skill 支持可复现抽牌，显示 seed、牌位和正逆位，避免为了得到喜欢的答案反复重抽。 | `references/tarot.md` |
 
-## 核心特点
+## 工作方式
 
-- 直接给断语，不绕圈。
-- 区分高置信判断和低置信推测。
-- 先让单一体系内部自洽，再做合参。
-- 每个体系先判定 `可运行 / 可部分判断 / 阻塞`，缺关键输入时不硬编。
-- 八字强调“先排盘事实，后解释”；梅花强调“时间、数字、外应”；六爻强调“自下而上六爻输入和纳甲层”；风水强调“形势为体，理气为用”；塔罗强调“牌阵、种子、正逆位和可复现抽牌”。
-- 不用一个符号乱断全部。
-- 已知事实优先于象征推演。
-- 有 `router.md` 控制八字、梅花、六爻、风水、塔罗的系统选择。
-- 有 `method-contracts.md` 统一输入卡和方法状态卡。
-- 有 `output-templates.md` 固定单体系和多体系合参输出格式。
-- 有 `examples.md` 提供不同语言和不同术数的触发案例。
-- 支持梅花易数结构计算脚本。
-- 支持塔罗牌阵抽牌脚本，输出 seed、牌位、正逆位，避免反复重抽。
-- 支持隐私扫描脚本，防止公开仓库误放真实姓名、出生信息、家庭信息、职场信息。
-- 支持 `validate_skill.py` 校验 skill 文件完整性。
-- 对健康、死亡、法律、投资、安全等高风险问题设明确边界。
+本 Skill 的核心流程是：
 
-## 安装
+1. 先重述问题，确认它到底问的是人生结构、近期变化、具体成败、空间关系，还是心理/关系动力。
+2. 选择对应体系。不是所有问题都适合八字，也不是所有问题都适合塔罗。
+3. 检查输入。八字看历法、时间、地点；梅花看时间、数字、外应；六爻看六爻顺序；风水看方位和布局；塔罗看牌阵和正逆位。
+4. 标记状态：可运行、可部分判断、阻塞。
+5. 单体系内部先下判断，再做多体系合参。
+6. 输出断语、依据、应期/强弱、行动、验证点和低置信推测。
+
+标准输出形态：
+
+```text
+断语：
+依据：
+应期/强弱：
+行动：
+验证点：
+低置信推测：
+```
+
+严格单体系输出：
+
+```text
+本次只用：
+断语：
+主证：
+冲突点：
+应期/数值：
+行动：
+验证点：
+置信层级：
+```
+
+## 安装到不同 AI Agent
+
+这个仓库不只给 Codex 用。任何可以读取本地文件的 AI Agent，都可以把它作为一套本地技能说明、参考资料和脚本工具来使用。
+
+### 通用安装
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+cd ~/agent-skills/metaphysics-synthesis
+python3 scripts/validate_skill.py
+```
+
+然后在你的 Agent 里说明：
+
+```text
+请使用本地 skill：~/agent-skills/metaphysics-synthesis/SKILL.md。根据问题只读取相关 references 文件。
+```
+
+### Codex
 
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.codex/skills/metaphysics-synthesis
+python3 ~/.codex/skills/metaphysics-synthesis/scripts/validate_skill.py
 ```
 
-然后重启或刷新 Codex skill。
+### Claude Code
 
-## 中文案例
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/.claude/skills/metaphysics-synthesis
+python3 ~/.claude/skills/metaphysics-synthesis/scripts/validate_skill.py
+```
 
-### 八字案例
+### 任意自定义技能目录
+
+```bash
+AGENT_SKILLS_DIR="$HOME/.your-agent/skills"
+mkdir -p "$AGENT_SKILLS_DIR"
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git "$AGENT_SKILLS_DIR/metaphysics-synthesis"
+python3 "$AGENT_SKILLS_DIR/metaphysics-synthesis/scripts/validate_skill.py"
+```
+
+### 多 Agent 共用一份
+
+```bash
+mkdir -p ~/agent-skills
+git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git ~/agent-skills/metaphysics-synthesis
+
+mkdir -p ~/.codex/skills ~/.claude/skills
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.codex/skills/metaphysics-synthesis
+ln -sfn ~/agent-skills/metaphysics-synthesis ~/.claude/skills/metaphysics-synthesis
+```
+
+## 使用示例
+
+### 八字
 
 ```text
-用八字看 2026-2036 年的事业和财运，严格区分命局结构、大运、流年触发点、高置信判断和低置信推测。
+用八字看 2026-2036 年事业、财运、婚恋和健康趋势，严格区分命局结构、大运、流年触发点、高置信判断和低置信推测。
 ```
 
-### 梅花易数案例
+### 梅花易数
 
 ```text
-用梅花易数看这个项目上线后是否对我转正有利。起心动念时间是 2026-06-12 10:36，外应是西北方主管在讨论排期。
+用梅花易数看这个项目上线后是否形成可汇报的结果。起心动念时间是 2026-06-12 10:36，外应是西北方主管在讨论排期。
 ```
 
-### 六爻案例
+### 六爻
 
 ```text
-用六爻判断这个项目能不能成为升职的主功。六个数字从初爻到上爻是 5 / 4 / 25 / 12 / 22 / 17。
+用六爻判断这个项目能不能成为升职主功。六个数字从初爻到上爻是 5 / 4 / 25 / 12 / 22 / 17，不串联旧卦。
 ```
 
-### 风水案例
+### 风水
 
 ```text
 按风水方位看我的工位：我面向东南，主管在西北，大领导在南方，跨团队负责人在东方。这个格局对可见度和汇报机会有什么影响？
 ```
 
-### 塔罗案例
+### 塔罗
 
 ```text
 用五张塔罗牌阵看这次职业选择。请抽牌并显示 seed、牌位、正逆位、断语、行动和验证点。
 ```
 
-## 梅花起卦脚本
+## 脚本
+
+### 梅花起卦结构计算
 
 ```bash
-python scripts/meihua_calc.py time 2026 6 12 10
-python scripts/meihua_calc.py classic 7 4 27 10
-python scripts/meihua_calc.py num 22 5 18
+python3 scripts/meihua_calc.py time 2026 6 12 10
+python3 scripts/meihua_calc.py classic 7 4 27 10
+python3 scripts/meihua_calc.py num 22 5 18
 ```
 
-脚本只负责算主卦、动爻、互卦、变卦、体用生克；解释仍按 `references/meihua.md`。
-
-## 塔罗抽牌脚本
+### 塔罗抽牌
 
 ```bash
-python scripts/tarot_draw.py --spread relationship --question "这段合作会不会成熟？" --seed 42
-python scripts/tarot_draw.py --spread five --question "职业选择" --json
+python3 scripts/tarot_draw.py --spread relationship --question "这段合作会不会成熟？" --seed 42
+python3 scripts/tarot_draw.py --spread five --question "职业选择" --json
 ```
 
-脚本只负责牌阵、牌名、正逆位和 seed；解释仍按 `references/tarot.md`。
-
-## 校验
+### 校验与隐私检查
 
 ```bash
-python scripts/validate_skill.py
-python scripts/privacy_check.py
+python3 scripts/validate_skill.py
+python3 scripts/privacy_check.py
 ```
 
-校验内容包括必要文件、`SKILL.md` frontmatter、本地引用链接和脚本 smoke test。隐私扫描用于公开发布前检查敏感信息。
+## 目录结构
 
-## 关键词
+```text
+metaphysics-synthesis-skill/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+│   ├── bazi.md
+│   ├── fengshui.md
+│   ├── liuyao.md
+│   ├── meihua.md
+│   ├── method-contracts.md
+│   ├── router.md
+│   ├── output-templates.md
+│   ├── examples.md
+│   ├── sources.md
+│   └── tarot.md
+├── scripts/
+│   ├── meihua_calc.py
+│   ├── tarot_draw.py
+│   ├── privacy_check.py
+│   └── validate_skill.py
+└── README.*.md
+```
 
-玄学 skill，命理 skill，八字 AI，八字命盘分析，子平命理，梅花易数，梅花易数起卦，邵雍象数，六爻占卜，纳甲六爻，风水方位，工位风水，塔罗牌解读，塔罗 AI，事业运，财运，婚姻运，感情运，健康趋势，Codex skill，AI Agent。
+## 安全边界
+
+本仓库把玄学视为文化、象征、反思和策略工具。它不能用于确定死亡、灾难、疾病结果、法律结果、投资收益或人身安全。涉及医疗、法律、投资、心理危机和紧急安全问题时，应以专业意见和直接证据优先。
+
+## 许可证
+
+MIT License。见 [LICENSE](LICENSE)。

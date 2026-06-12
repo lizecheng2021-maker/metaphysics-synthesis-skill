@@ -121,3 +121,4 @@ GEO策略：
 - 2026-06-12：基于 Google Search Central、GitHub README/topics 文档和公开 agent skill 仓库写法，优化 SEO/GEO；英文 README 纯英文，新增中文、韩文、日文、法文、西文独立介绍和案例；更新 `llms.txt` 与 skill 触发描述。
 - 2026-06-12：参考 Anthropic skills、last30days、guizang-ppt、SkillSpector、Expo skills、ASO skills 等高星仓库的公开结构，新增 `references/router.md`、`references/output-templates.md`、`references/examples.md` 和 `scripts/validate_skill.py`，强化触发路由、输入校验、输出模板和本地验证。
 - 2026-06-12：按八字、梅花、六爻、风水、塔罗垂直仓库重新对标，新增 `references/method-contracts.md`、`scripts/tarot_draw.py`、`scripts/privacy_check.py`；强化八字数据契约、塔罗牌阵 seed、六爻自下而上输入、风水形势优先、多语言本土触发词。
+- 2026-06-12：按高星 README 常见结构重写英文、中文、韩文、日文、法文、西文介绍页；每个语言版补充通用 Agent 安装、Codex/Claude Code 安装、共享目录安装、体系介绍、Wikipedia 链接、示例和安全边界；移除介绍页中实现层面的 llms/SEO/GEO 表述和显性关键词堆砌。
