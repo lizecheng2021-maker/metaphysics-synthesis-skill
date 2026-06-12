@@ -18,7 +18,11 @@ Important files:
 - `references/liuyao.md`: Liuyao / Najia workflow.
 - `references/fengshui.md`: Feng Shui direction workflow.
 - `references/tarot.md`: Tarot workflow.
+- `references/router.md`: method selection, input gate, repeat-reading policy, precision rules, and conflict resolution.
+- `references/output-templates.md`: strict output formats for single-system readings and synthesis.
+- `references/examples.md`: example prompts for BaZi, Meihua Yishu, Liuyao, Feng Shui, Tarot, and synthesis.
 - `scripts/meihua_calc.py`: deterministic Meihua Yishu structure calculator.
+- `scripts/validate_skill.py`: lightweight package validation script.
 
 Localized documentation:
 - English: `README.md`

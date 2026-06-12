@@ -2,7 +2,7 @@
 
 An AI agent skill for structured divination, Chinese metaphysics, BaZi reading, Meihua Yishu, Liuyao, Feng Shui direction analysis, and Tarot interpretation.
 
-This repository packages a Codex-compatible skill for assistants that need decisive but bounded metaphysical readings. It combines classical Chinese systems and Western Tarot with a repeatable workflow: verdict, evidence, timing, action, and verification.
+This repository packages a Codex-compatible and Agent Skills-compatible workflow for assistants that need decisive but bounded metaphysical readings. It combines classical Chinese systems and Western Tarot with a repeatable workflow: verdict, evidence, timing, action, and verification.
 
 > Cultural and reflective use only. This skill does not replace medical, legal, financial, mental-health, emergency, or safety advice.
 
@@ -55,7 +55,11 @@ It enforces a repeatable method:
 - Decisive output pattern: verdict, evidence, timing, action, and verification.
 - Evidence hierarchy for conflicting symbolic signals.
 - System selection rules for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot.
+- Router reference for choosing the right method and preventing cross-reading contamination.
+- Strict output templates for single-system readings and multi-system synthesis.
+- Example prompt library for better trigger coverage across Chinese and English queries.
 - Deterministic Meihua Yishu calculator for main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
+- Lightweight validation script for skill package health checks.
 - Safety boundaries for medical, legal, financial, death, disaster, and personal safety topics.
 - Progressive disclosure: a compact `SKILL.md`, detailed method files in `references/`, and executable support in `scripts/`.
 - AI-readable `llms.txt` summary for agent and answer-engine discovery.
@@ -120,6 +124,16 @@ python scripts/meihua_calc.py num 22 5 18
 
 Output includes main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
 
+## Validate the Skill
+
+Run the local validator after editing files:
+
+```bash
+python scripts/validate_skill.py
+```
+
+The validator checks required files, `SKILL.md` frontmatter, local reference links, and the Meihua calculator smoke test.
+
 ## Repository Structure
 
 ```text
@@ -131,9 +145,13 @@ metaphysics-synthesis-skill/
 │   ├── fengshui.md
 │   ├── liuyao.md
 │   ├── meihua.md
+│   ├── router.md
+│   ├── output-templates.md
+│   ├── examples.md
 │   ├── sources.md
 │   └── tarot.md
 ├── scripts/meihua_calc.py
+├── scripts/validate_skill.py
 ├── llms.txt
 └── README.*.md
 ```

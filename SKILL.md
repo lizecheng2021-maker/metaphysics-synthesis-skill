@@ -18,6 +18,21 @@ Default boundaries:
 - When science or direct evidence can answer the question, prioritize science/evidence. Use divination for unclear timing, hidden relations, symbolic direction, or decision texture.
 - For already-known events, accept reality first and use it to calibrate the chart/hexagram. Do not force reality to fit a prior reading.
 
+## Fast Router
+
+Read [references/router.md](references/router.md) when the question mixes multiple systems, asks "which method should I use?", repeats a prior divination, or demands "不要串联记忆 / 单卦 / 严格按 skill".
+
+Default routing:
+
+- Life arc, decade luck, career/wealth/marriage tendency: 八字/子平.
+- Sudden event, omen, direction, timestamp, near-term movement: 梅花易数.
+- Concrete yes/no outcome, promotion, contract, boss, salary, product data, specific person: 六爻.
+- Workspace, seating direction, leader position, door/window/flow: 风水/方位.
+- Psychology, relationship dynamics, choices, symbolic texture: 塔罗.
+- If the user provides a system explicitly, honor that system first and avoid blending unless asked.
+
+If a question contains multiple unrelated targets, split it before reading. Example: "promotion timing" and "health trend" should be separate readings unless the user asks for synthesis.
+
 ## Decisive Output Contract
 
 When the user asks for 果断, 大师式, 直接断, or similar wording:
@@ -40,6 +55,12 @@ Use this hierarchy whenever signs conflict:
 4. Near-term concrete questions are more reliable than far-future biography.
 5. If evidence splits, state the dominant branch and the exact trigger that would flip the verdict.
 
+Reliability tiers:
+
+- **High**: near-term concrete question + complete inputs + one system gives one-sided signs + real-world facts align.
+- **Medium**: partial inputs or several signs align but timing/details remain broad.
+- **Low**: far-future biography, exact physical traits, exact salary/number without data, or love/marriage details many years out.
+
 ## System Selection
 
 - **八字/子平**: Use for lifelong structure, decade luck, career/wealth/marriage/health tendencies, major timing bands. Read [references/bazi.md](references/bazi.md) for serious work.
@@ -47,6 +68,8 @@ Use this hierarchy whenever signs conflict:
 - **六爻/纳甲**: Use for concrete outcomes involving roles, contracts, bosses, salary, product traction, relationships with a specific person, property, and process details. Read [references/liuyao.md](references/liuyao.md).
 - **风水/方位**: Use for workspace/home layout, seating, directions, bosses/doors/windows/flow, and environmental symbolism. Read [references/fengshui.md](references/fengshui.md).
 - **塔罗**: Use for psychological dynamics, relationship texture, choices, and symbolic reflection, especially when a spread/cards are provided. Read [references/tarot.md](references/tarot.md).
+- **Output templates**: Read [references/output-templates.md](references/output-templates.md) when the user wants a strict format, multilingual examples, or a clean public-facing reading.
+- **Examples**: Read [references/examples.md](references/examples.md) when improving prompts, docs, or trigger coverage.
 
 ## Workflow
 
@@ -58,9 +81,13 @@ Use this hierarchy whenever signs conflict:
    - 六爻: question, time, six lines from bottom to top, location/time zone, outer omen.
    - 风水: sitting/facing direction, floor plan or relative positions, doors/windows/traffic.
    - 塔罗: deck/system, cards, positions, upright/reversed.
-4. Analyze within the chosen system before synthesis. Do not jump straight to a modern story.
-5. Decide, then explain: verdict, strength, timing, reason, action, confirmation/falsification.
-6. If combining systems, let each system speak first, then synthesize only the overlapping signals.
+4. Apply the input gate:
+   - If the user asks "不要记忆 / 不串联", ignore prior readings except direct facts in the current prompt.
+   - If the same unchanged question has already been read, do not recast; compare and synthesize prior outputs instead.
+   - If the user asks for an exact value, give a bounded symbolic value plus the evidence tier; do not pretend symbolic methods create measurement-grade certainty.
+5. Analyze within the chosen system before synthesis. Do not jump straight to a modern story.
+6. Decide, then explain: verdict, strength, timing, reason, action, confirmation/falsification.
+7. If combining systems, let each system speak first, then synthesize only the overlapping signals.
 
 ## Answer Shape
 
@@ -76,6 +103,31 @@ For most readings:
 ```
 
 Keep the form if the user wants detail. Compress it for quick answers.
+
+For strict single-system readings:
+
+```text
+本次只用：{system}
+断语：
+主证：
+冲突点：
+应期/数值：
+行动：
+验证点：
+置信层级：
+```
+
+For synthesis:
+
+```text
+总断：
+各体系分断：
+共同信号：
+冲突信号：
+最终裁决：
+行动清单：
+验证点：
+```
 
 ## Anti-Patterns
 

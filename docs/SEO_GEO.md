@@ -28,6 +28,7 @@ The repository is eligible to be crawled because it is public and has text-based
 5. Keep `llms.txt` as a concise AI-readable summary for answer engines and agents.
 6. Use GitHub topics to improve GitHub-native discovery.
 7. Keep safety boundaries visible so search engines and AI systems understand the domain limits.
+8. Keep runtime logic in `SKILL.md`, `references/`, and `scripts/`; keep README focused on discovery, installation, and examples.
 
 ## Language Pages
 
@@ -46,3 +47,13 @@ The repository is eligible to be crawled because it is public and has text-based
 - Add GitHub Pages later if stronger indexing is needed, because Pages can support HTML metadata, canonical links, and hreflang tags more directly than GitHub's README renderer.
 - Add a `CONTRIBUTING.md` if outside users begin opening issues or pull requests.
 - Add a lightweight test for `scripts/meihua_calc.py` if the calculator grows beyond simple structure output.
+
+## Benchmark Notes
+
+Patterns borrowed from high-star skill and agent repositories:
+
+- Official skill repositories keep `SKILL.md` as the source of truth and use references/scripts for progressive disclosure.
+- Search-oriented skills describe the exact job they perform in the first screen, not just the technology.
+- Tool-heavy skills include quickstart commands, realistic example prompts, and validation or setup checks.
+- Multi-skill repositories use routers so users do not need to remember every skill name.
+- Security-oriented skill tools validate file structure and risky patterns before distribution.
