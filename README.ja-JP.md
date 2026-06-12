@@ -4,6 +4,8 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
+![Metaphysics Synthesis Skill social card](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+
 形而上学総合 Skill は、AI Agent が四柱推命、梅花易数、六爻、風水方位分析、タロット解釈を構造的に扱うための再利用可能な skill パッケージです。これは単なる占いプロンプトではありません。質問を分類し、入力を確認し、適切な体系を選び、結論、根拠、時期、行動、検証ポイントを分けて出力するための手順です。Codex、Claude Code、そしてローカルファイルを参照できる他の AI Agent で利用できます。
 
 AI に占術を扱わせると、よく二つの問題が起きます。一つ目は、四柱推命、易占、風水、タロットを同じ雰囲気で混ぜてしまうことです。二つ目は、一つの象徴を過剰に拡大して、検証できない大きな断定にしてしまうことです。この Skill はその逆を目指します。四柱推命は命式構造、大運、年運、仕事、財運、結婚、健康傾向に使います。梅花易数は時刻、数字、外応、近い出来事の動きに使います。六爻は契約、昇進、上司、給与、プロジェクトの成否など具体的な結果に使います。風水は座席、方位、入口、窓、動線、音、視線、背後の支えに使います。タロットは関係性、心理、選択、障害、転換点に使います。
@@ -137,6 +139,50 @@ python3 scripts/meihua_calc.py num 22 5 18
 python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
 python3 scripts/validate_skill.py
 python3 scripts/privacy_check.py
+```
+
+## X / Twitter 投稿文
+
+```text
+I released an open-source Agent Skill for structured metaphysical reasoning:
+
+Metaphysics Synthesis Skill
+
+It covers:
+• 四柱推命 / BaZi
+• 梅花易数 / 易占
+• 六爻 / 納甲
+• 風水方位分析
+• タロットスプレッド
+
+This is not just a fortune-telling prompt.
+
+AI can imitate the tone of divination very easily.
+But stable readings need structure:
+What is the question?
+Which method fits?
+Is the input complete?
+What is evidence, and what is only a low-confidence inference?
+
+This skill turns that into a workflow:
+1. Route the question to the right system.
+2. Validate the input.
+3. Mark each method as runnable, partial, or blocked.
+4. Read each method internally before synthesis.
+5. Return verdict, evidence, timing, action, and verification signals.
+
+The repo includes:
+• SKILL.md routing
+• Method references for BaZi, Meihua, Liuyao, Feng Shui, and Tarot
+• Meihua structure calculator
+• Reproducible Tarot draw script
+• Multilingual README guides
+• Validation and privacy-check scripts
+
+It can be used with Codex, Claude Code, or any AI agent that can read a local skill folder.
+
+GitHub:
+https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill
 ```
 
 ## 安全範囲

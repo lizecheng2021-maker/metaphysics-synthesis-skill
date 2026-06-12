@@ -4,6 +4,8 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
+![Metaphysics Synthesis Skill social card](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+
 형이상학 종합 Skill은 AI Agent가 사주팔자, 매화역수, 육효, 풍수 방향 분석, 타로 리딩을 구조적으로 다루도록 돕는 재사용 가능한 skill 패키지입니다. 이 저장소는 단순한 점술 프롬프트가 아닙니다. 질문을 먼저 분류하고, 필요한 입력을 확인하고, 적합한 체계를 선택하고, 결론과 근거, 시기, 행동, 검증 신호를 분리하여 답하도록 설계된 절차입니다. Codex, Claude Code, 그리고 로컬 파일을 읽을 수 있는 다른 AI Agent 환경에서 사용할 수 있습니다.
 
 일반적인 AI 점술 답변은 쉽게 흐려집니다. 사주와 타로와 풍수를 한 문장 안에 섞고, 하나의 상징을 너무 크게 해석하며, 사용자가 듣고 싶은 말로 마무리하는 경우가 많습니다. 이 skill은 그런 방식을 피합니다. 사주는 인생 구조와 대운, 세운, 직업과 재물 흐름을 봅니다. 매화역수는 시간, 숫자, 외응, 갑작스러운 사건의 움직임을 봅니다. 육효는 계약, 승진, 상사, 급여, 프로젝트 성패처럼 구체적인 결과를 봅니다. 풍수는 좌석, 방향, 문, 창문, 동선, 소음, 시야, 지지 구조를 봅니다. 타로는 관계의 역학, 심리적 압력, 선택의 갈림길, 상징적 전환점을 봅니다.
@@ -137,6 +139,49 @@ python3 scripts/meihua_calc.py num 22 5 18
 python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
 python3 scripts/validate_skill.py
 python3 scripts/privacy_check.py
+```
+
+## X / Twitter Post
+
+```text
+I built an open-source Agent Skill for structured metaphysical reasoning:
+
+Metaphysics Synthesis Skill
+
+It supports:
+• 사주팔자 / BaZi
+• 매화역수 / I Ching omen reading
+• 육효 / Najia
+• 풍수 방향 분석
+• 타로 배열
+
+This is not a generic fortune-telling prompt.
+
+Most AI divination answers become too vague:
+a few comforting words, one symbolic clue, and no clear method.
+
+This skill tries to make the process cleaner:
+1. Choose the right system for the question.
+2. Check whether the input is complete.
+3. Mark the method as runnable, partial, or blocked.
+4. Read each system before mixing them.
+5. Output verdict, evidence, timing, action, and verification signals.
+
+The repo includes:
+• A compact SKILL.md router
+• References for BaZi, Meihua, Liuyao, Feng Shui, and Tarot
+• A Meihua hexagram calculator
+• A reproducible Tarot draw script with seed
+• Korean, English, Chinese, Japanese, French, and Spanish README guides
+• Validation and privacy-check scripts
+
+It works with Codex, Claude Code, and any AI agent that can load a local skill folder.
+
+The point is not “AI tells the future.”
+The point is building a disciplined workflow for symbolic reasoning.
+
+GitHub:
+https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill
 ```
 
 ## 안전 범위

@@ -4,6 +4,8 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Metaphysics%20Synthesis-6f42c1)](SKILL.md)
 [![Python](https://img.shields.io/badge/Python-3.x-3776ab)](scripts/)
 
+![Carte sociale du Skill de Synthèse Métaphysique](assets/social/generated/metaphysics-synthesis-twitter-bg.png)
+
 Le Skill de Synthèse Métaphysique est un paquet réutilisable pour AI Agents consacré au BaZi, au Meihua Yishu, au Liuyao, au Feng Shui directionnel et au Tarot. Ce n'est pas un simple prompt de divination. C'est une méthode structurée qui aide un assistant IA à choisir le bon système, vérifier les entrées, formuler un verdict, présenter les preuves, estimer le délai, proposer des actions et définir des signes de vérification. Il peut être utilisé avec Codex, Claude Code ou tout autre agent capable de lire un dossier local contenant des instructions, des références et des scripts.
 
 La plupart des réponses de divination générées par IA deviennent trop générales. Elles mélangent astrologie chinoise, Yi King, Feng Shui et Tarot comme s'il s'agissait d'un seul langage symbolique. Elles prennent parfois un seul signe, une seule carte ou un seul conflit et en font une conclusion dramatique. Ce skill évite cette dérive. Le BaZi sert à lire la structure de vie et les cycles de chance. Le Meihua Yishu sert aux questions soudaines, aux horaires, aux nombres et aux présages. Le Liuyao sert aux résultats concrets: contrat, poste, supérieur, salaire, projet, relation spécifique. Le Feng Shui sert à lire l'espace, la direction, le soutien arrière, l'ouverture devant soi, les portes, les fenêtres, les flux et la visibilité. Le Tarot sert à lire les dynamiques psychologiques, relationnelles et décisionnelles.
@@ -139,6 +141,51 @@ python3 scripts/meihua_calc.py num 22 5 18
 python3 scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
 python3 scripts/validate_skill.py
 python3 scripts/privacy_check.py
+```
+
+## Publication X / Twitter
+
+```text
+I built an open-source Agent Skill for structured metaphysical readings:
+
+Metaphysics Synthesis Skill
+
+It covers:
+• BaZi / quatre piliers
+• Meihua Yishu / Yi Jing omen reading
+• Liuyao / Najia
+• Feng Shui direction analysis
+• Tarot tirages
+
+This is not a vague divination prompt.
+
+The idea is simple:
+AI should not mix every symbolic system into the same soft answer.
+
+BaZi has its own inputs.
+Meihua has its own timing and omen logic.
+Liuyao has its own line order and role structure.
+Feng Shui needs observable spatial facts.
+Tarot needs spread positions and card interaction.
+
+So the skill enforces a workflow:
+1. Choose the right method.
+2. Check the input.
+3. Mark the method as runnable, partial, or blocked.
+4. Interpret each system before synthesis.
+5. Give verdict, evidence, timing, action, and verification signals.
+
+The repository includes:
+• Method references
+• Meihua calculator
+• Reproducible Tarot draw script
+• Multilingual README guides
+• Validation and privacy-check scripts
+
+Works with Codex, Claude Code, and any local agent skill setup.
+
+GitHub:
+https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill
 ```
 
 ## Limites de sécurité

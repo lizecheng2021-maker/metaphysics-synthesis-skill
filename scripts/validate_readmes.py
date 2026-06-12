@@ -41,6 +41,16 @@ REQUIRED_COMMAND_SNIPPETS = [
     "ln -sfn",
 ]
 
+SOCIAL_IMAGE = "assets/social/generated/metaphysics-synthesis-twitter-bg.png"
+SOCIAL_MARKERS = {
+    "README.md": "Share On X / Twitter",
+    "README.zh-CN.md": "X / Twitter 分享文案",
+    "README.ko-KR.md": "X / Twitter Post",
+    "README.ja-JP.md": "X / Twitter 投稿文",
+    "README.fr-FR.md": "Publication X / Twitter",
+    "README.es-ES.md": "Publicación para X / Twitter",
+}
+
 
 def fail(message: str) -> None:
     print(f"FAIL: {message}", file=sys.stderr)
@@ -65,6 +75,11 @@ def check_readme(path: pathlib.Path, required_terms: list[str]) -> None:
         fail(f"{path.name} contains visible discoverability/internal terms: {', '.join(forbidden)}")
     if "docs/" in text:
         fail(f"{path.name} references removed docs/ directory")
+    if SOCIAL_IMAGE not in text:
+        fail(f"{path.name} missing shared social image")
+    marker = SOCIAL_MARKERS[path.name]
+    if marker not in text:
+        fail(f"{path.name} missing localized X/Twitter section")
 
 
 def main() -> None:
