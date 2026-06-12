@@ -13,11 +13,14 @@ The repository is eligible to be crawled because it is public and has text-based
 - "Liuyao divination workflow"
 - "Feng Shui direction analysis"
 - "Tarot AI prompt"
+- "Tarot spread seed"
+- "AI tarot reading workflow"
 - "Chinese metaphysics skill"
 - "八字 AI skill"
 - "梅花易数起卦脚本"
 - "六爻占卜 AI 工作流"
 - "塔罗牌 AI 解读提示词"
+- "塔罗牌阵 seed 抽牌"
 
 ## Optimization Decisions
 
@@ -57,3 +60,16 @@ Patterns borrowed from high-star skill and agent repositories:
 - Tool-heavy skills include quickstart commands, realistic example prompts, and validation or setup checks.
 - Multi-skill repositories use routers so users do not need to remember every skill name.
 - Security-oriented skill tools validate file structure and risky patterns before distribution.
+
+## Vertical Repository Benchmark
+
+The current iteration also reviewed vertical metaphysics repositories rather than only generic skill repositories.
+
+| Vertical | Public reference pattern | Adopted decision |
+| --- | --- | --- |
+| BaZi / Four Pillars | BaZi tools emphasize accurate birth-data collection, chart calculation, luck-cycle structure, and multilingual surfaces. | Added canonical BaZi data contract and calculation-vs-interpretation split. |
+| Meihua Yishu | Meihua skills emphasize short root skill files, deep references, deterministic calculators, Ti/Yong, and omen/timing notes. | Kept `SKILL.md` lean, retained references, and preserved `scripts/meihua_calc.py`. |
+| Liuyao / Najia | Najia tools expose line order, moving lines, six relatives, six spirits, 世应, day/month, and bug-prone mapping details. | Added line input contract and `partial` status when Najia/month/day are unavailable. |
+| Feng Shui | Feng Shui skills and tools work best when they start from observable environment, not cure-selling. | Strengthened "形势为体，理气为用" and office power mapping. |
+| Tarot | Tarot skills and engines commonly provide spreads, card draws, reversals, and session history. | Added `scripts/tarot_draw.py`, spread selection, seed display, and no-repeat draw discipline. |
+| Multi-system hubs | Larger metaphysics projects route across systems and separate calculation modules from interpretation layers. | Added `method-contracts.md`, method status cards, localized trigger surface, and privacy scan. |

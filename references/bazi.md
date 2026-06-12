@@ -20,6 +20,35 @@ Before judging:
 3. If place/time implies true solar time correction and the hour may change, flag it before judging.
 4. If only date is known, read structure and luck coarsely; do not judge spouse/children/hour-pillar details.
 
+## Canonical Data Contract
+
+For serious BaZi work, normalize the data before interpretation:
+
+```json
+{
+  "calendar_type": "solar|lunar|unknown",
+  "birth_date": "YYYY-MM-DD",
+  "birth_time": "HH:MM",
+  "birth_place": "city/country",
+  "timezone": "IANA timezone if known",
+  "gender": "",
+  "hour_convention": "early_zi|late_zi|unknown",
+  "true_solar_time_checked": false,
+  "chart_source": "tool|user_provided|manual_estimate"
+}
+```
+
+If any field is uncertain, mark the reading `partial`. Do not present spouse, children, and hour-pillar conclusions as fixed when the hour pillar can change.
+
+## Calculation vs Interpretation
+
+Borrow this engineering discipline from strong BaZi tools: calculate first, interpret second.
+
+- Deterministic layer: calendar conversion, four pillars, hidden stems, ten gods, twelve growth stages, luck cycles, annual/monthly pillars.
+- Interpretive layer: 格局, 用神, 调候, event timing, life strategy, and real-world action.
+- If no reliable calculator or user-provided chart is available, say the deterministic layer is approximate and keep the verdict narrower.
+- Public examples must be fictional. Never publish real names, exact birth details, workplace facts, family facts, or private life events.
+
 ## Master-Style Reading Order
 
 1. **Set the question**: career, wealth, marriage, family, health tendency, timing, or life structure. Do not read everything with equal force.

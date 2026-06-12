@@ -10,12 +10,14 @@ Without floor plan, compass sitting/facing, construction period, and precise env
 
 Use hierarchy:
 
-1. **形势 first**: backing, open front, left/right balance, door/window/traffic/sha, noise, clutter, visibility.
+1. **形势为体**: backing, open front, left/right balance, door/window/traffic/sha, noise, clutter, visibility.
 2. **八卦方位**: 乾坤震巽坎离艮兑 as symbolic mapping.
 3. **Office power mapping**: boss position, manager behind/side/front, screen visibility, aisle pressure, meeting line of sight.
-4. **玄空飞星**: only if period, sitting/facing degree, and floor plan are available.
+4. **理气为用**: 八宅/玄空飞星 only if period, sitting/facing degree, and floor plan are available.
 
 No compass and no floor plan means no confident飞星 judgment.
+
+High-quality Feng Shui readings do not start by selling cures. They start by checking what the body actually experiences: support behind, openness ahead, pressure lines, glare, noise, privacy, door flow, and whether the layout helps or leaks attention.
 
 ## Input Gate
 
@@ -58,6 +60,7 @@ Ask or infer:
 - If the user faces clutter/noise/traffic, read it as attention leakage before mystical symbolism.
 - If a claimed cure does not change light, flow, privacy, noise, cleanliness, or behavior, treat it as weak symbolic support.
 - If form and飞星 conflict, prioritize form for immediate lived effect; use飞星 for longer-period emphasis.
+- If the reading is for office politics or promotion, map leaders and movement lines as environmental pressure/support first, then read direction symbolism second.
 
 ## Office Reading Order
 

@@ -21,10 +21,13 @@ REQUIRED_FILES = [
     "references/fengshui.md",
     "references/tarot.md",
     "references/router.md",
+    "references/method-contracts.md",
     "references/output-templates.md",
     "references/examples.md",
     "references/sources.md",
     "scripts/meihua_calc.py",
+    "scripts/tarot_draw.py",
+    "scripts/privacy_check.py",
 ]
 
 
@@ -73,11 +76,32 @@ def check_meihua_script() -> None:
             fail(f"meihua_calc.py output missing {needle}")
 
 
+def check_tarot_script() -> None:
+    cmd = [
+        sys.executable,
+        str(ROOT / "scripts/tarot_draw.py"),
+        "--spread",
+        "relationship",
+        "--question",
+        "validation",
+        "--seed",
+        "42",
+        "--json",
+    ]
+    result = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
+    if result.returncode != 0:
+        fail("tarot_draw.py failed: " + result.stderr.strip())
+    for needle in ['"spread": "relationship"', '"seed": 42', '"cards"']:
+        if needle not in result.stdout:
+            fail(f"tarot_draw.py output missing {needle}")
+
+
 def main() -> None:
     check_required_files()
     check_skill_frontmatter()
     check_local_links()
     check_meihua_script()
+    check_tarot_script()
     print("OK: skill package validated")
 
 

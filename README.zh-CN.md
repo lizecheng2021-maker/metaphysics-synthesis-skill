@@ -35,12 +35,17 @@
 - 直接给断语，不绕圈。
 - 区分高置信判断和低置信推测。
 - 先让单一体系内部自洽，再做合参。
+- 每个体系先判定 `可运行 / 可部分判断 / 阻塞`，缺关键输入时不硬编。
+- 八字强调“先排盘事实，后解释”；梅花强调“时间、数字、外应”；六爻强调“自下而上六爻输入和纳甲层”；风水强调“形势为体，理气为用”；塔罗强调“牌阵、种子、正逆位和可复现抽牌”。
 - 不用一个符号乱断全部。
 - 已知事实优先于象征推演。
 - 有 `router.md` 控制八字、梅花、六爻、风水、塔罗的系统选择。
+- 有 `method-contracts.md` 统一输入卡和方法状态卡。
 - 有 `output-templates.md` 固定单体系和多体系合参输出格式。
 - 有 `examples.md` 提供不同语言和不同术数的触发案例。
 - 支持梅花易数结构计算脚本。
+- 支持塔罗牌阵抽牌脚本，输出 seed、牌位、正逆位，避免反复重抽。
+- 支持隐私扫描脚本，防止公开仓库误放真实姓名、出生信息、家庭信息、职场信息。
 - 支持 `validate_skill.py` 校验 skill 文件完整性。
 - 对健康、死亡、法律、投资、安全等高风险问题设明确边界。
 
@@ -82,7 +87,7 @@ git clone https://github.com/lizecheng2021-maker/metaphysics-synthesis-skill.git
 ### 塔罗案例
 
 ```text
-用七张塔罗牌看这段关系的动力，只看关系，不串八字和旧卦。给主轴、阻碍、转折、对方行动和验证点。
+用五张塔罗牌阵看这次职业选择。请抽牌并显示 seed、牌位、正逆位、断语、行动和验证点。
 ```
 
 ## 梅花起卦脚本
@@ -95,13 +100,23 @@ python scripts/meihua_calc.py num 22 5 18
 
 脚本只负责算主卦、动爻、互卦、变卦、体用生克；解释仍按 `references/meihua.md`。
 
+## 塔罗抽牌脚本
+
+```bash
+python scripts/tarot_draw.py --spread relationship --question "这段合作会不会成熟？" --seed 42
+python scripts/tarot_draw.py --spread five --question "职业选择" --json
+```
+
+脚本只负责牌阵、牌名、正逆位和 seed；解释仍按 `references/tarot.md`。
+
 ## 校验
 
 ```bash
 python scripts/validate_skill.py
+python scripts/privacy_check.py
 ```
 
-校验内容包括必要文件、`SKILL.md` frontmatter、本地引用链接和梅花脚本 smoke test。
+校验内容包括必要文件、`SKILL.md` frontmatter、本地引用链接和脚本 smoke test。隐私扫描用于公开发布前检查敏感信息。
 
 ## 关键词
 

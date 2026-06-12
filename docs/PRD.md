@@ -15,6 +15,9 @@
 - 触发并执行 metaphysics synthesis workflow。
 - 按系统选择参考文件。
 - 使用梅花脚本校验主卦、互卦、变卦、动爻、体用生克。
+- 使用塔罗抽牌脚本提供可复现牌阵、seed、正逆位。
+- 使用方法状态卡区分可运行、可部分判断、阻塞。
+- 使用隐私扫描避免公开仓库误放个人真实信息。
 - 保留高风险边界，避免用玄学替代专业建议。
 
 ## 2. 技术选型
@@ -40,7 +43,8 @@ User prompt
 
 - `SKILL.md`：总入口和工作流。
 - `references/`：各术数细则。
-- `scripts/`：确定性计算辅助。
+- `references/method-contracts.md`：统一输入卡、方法状态卡、本土化触发词和公开案例隐私规则。
+- `scripts/`：确定性计算辅助、塔罗抽牌、隐私扫描和包校验。
 - `README.md` / `llms.txt`：GitHub 展示和 AI 摘要。
 
 ## 4. 安全方案
@@ -99,6 +103,8 @@ GEO策略：
 | 术数体系冲突 | 中 | 单系统先自洽，再合参 |
 | GitHub SEO弱 | 中 | Description/topics/README/llms.txt |
 | 脚本与解释不一致 | 中 | 脚本只算结构，不下断语 |
+| 公开案例泄露私人信息 | 高 | `scripts/privacy_check.py` 发布前扫描 |
+| 多语言 README 翻译腔 | 中 | 使用各语言本土搜索词和本地案例 |
 
 ## 8. 里程碑
 
@@ -114,3 +120,4 @@ GEO策略：
 - 2026-06-12：创建 GitHub 发布包，补充 README、中文 README、llms.txt、LICENSE、GITHUB_METADATA、PRD。
 - 2026-06-12：基于 Google Search Central、GitHub README/topics 文档和公开 agent skill 仓库写法，优化 SEO/GEO；英文 README 纯英文，新增中文、韩文、日文、法文、西文独立介绍和案例；更新 `llms.txt` 与 skill 触发描述。
 - 2026-06-12：参考 Anthropic skills、last30days、guizang-ppt、SkillSpector、Expo skills、ASO skills 等高星仓库的公开结构，新增 `references/router.md`、`references/output-templates.md`、`references/examples.md` 和 `scripts/validate_skill.py`，强化触发路由、输入校验、输出模板和本地验证。
+- 2026-06-12：按八字、梅花、六爻、风水、塔罗垂直仓库重新对标，新增 `references/method-contracts.md`、`scripts/tarot_draw.py`、`scripts/privacy_check.py`；强化八字数据契约、塔罗牌阵 seed、六爻自下而上输入、风水形势优先、多语言本土触发词。

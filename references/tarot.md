@@ -22,6 +22,34 @@ Use Thoth only when user explicitly uses Thoth/Crowley deck:
    - Five cards: past trigger / current / hidden factor / advice / likely outcome.
 3. For predictive questions, define horizon. Tarot is weaker when the time range is vague.
 
+## Draw Discipline
+
+Use these rules when the user asks the assistant to draw cards:
+
+1. If the user already provides cards, do not redraw. Interpret the provided cards and positions.
+2. If the user asks for a draw but gives no cards, run:
+
+   ```bash
+   python scripts/tarot_draw.py --spread three --question "..."
+   ```
+
+   Use `--json` if the result will be parsed or copied into a report.
+3. Always show the spread name and seed. The seed makes the draw reproducible and prevents "redraw until desired answer."
+4. Do not redraw the same unchanged question. A new draw needs a new question, a new time window, or a clearly new decision point.
+5. Treat the script as a symbolic randomization tool, not physical supernatural proof. The reading still depends on spread structure and interpretation.
+
+## Spread Selection
+
+| User need | Spread | Why |
+| --- | --- | --- |
+| Quick tone or daily focus | `single` | One direct anchor card. |
+| General direction | `three` | Situation / obstacle / direction. |
+| Timing arc | `past-present-future` | Clean story line. |
+| Two choices | `decision` | Compares paths without over-reading. |
+| Relationship dynamic | `relationship` | Separates user, other person, bond, obstacle, next step. |
+| Serious process question | `five` | Adds hidden factor and likely outcome. |
+| Deep life cross-section | `celtic` | Use sparingly; it is broad and slower. |
+
 ## Master-Style Reading Order
 
 1. Read position first, then card image, then title/keyword.
@@ -68,6 +96,7 @@ Use this structure:
 - Do not replace medical, legal, financial, or safety advice.
 - For third-party mind-reading questions, focus on observable dynamics and user choices rather than claiming total access to another person's mind.
 - Do not repeatedly redraw until the user likes the answer.
+- Avoid generic Barnum readings. Every claim must tie back to card position, imagery, suit/element distribution, or card interaction.
 
 ## Reversals
 

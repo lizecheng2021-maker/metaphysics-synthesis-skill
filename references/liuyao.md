@@ -15,6 +15,31 @@ Use 纳甲六爻. Reference:
 3. If the user asks several outcomes, split them. One卦 should not carry unrelated questions.
 4. Do not re-cast an unchanged question unless a new factual trigger appears.
 
+## Line Input Contract
+
+Six-line divination fails when the line order or numeric mapping is ambiguous. Use this contract:
+
+```json
+{
+  "question": "",
+  "casting_time": "",
+  "timezone": "",
+  "method": "coins|numbers|manual_hexagram|unknown",
+  "lines_bottom_to_top": [],
+  "moving_lines": [],
+  "month_branch": "",
+  "day_branch": "",
+  "najia_available": false
+}
+```
+
+Rules:
+
+- Always state that the first line is the bottom line. If the user writes "第一爻", interpret it as 初爻 unless they explicitly say top-down.
+- If numbers are used, state the mapping before reading. If mapping is not available, read hexagram structure only and mark Najia detail `partial`.
+- If month/day, 世应, 六亲, or 纳甲 cannot be established, do not claim a full 纳甲六爻 judgment.
+- Do not simulate coin throws unless the user asks. If a simulation is used, show seed or method so the cast is not silently mutable.
+
 ## Master-Style Reading Order
 
 1. Build 本卦, 变卦, 世应, 纳甲, 六亲, 六神, 旬空.

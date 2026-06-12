@@ -55,10 +55,13 @@ It enforces a repeatable method:
 - Decisive output pattern: verdict, evidence, timing, action, and verification.
 - Evidence hierarchy for conflicting symbolic signals.
 - System selection rules for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot.
+- Unified input and method status cards: `runnable`, `partial`, or `blocked`.
 - Router reference for choosing the right method and preventing cross-reading contamination.
 - Strict output templates for single-system readings and multi-system synthesis.
-- Example prompt library for better trigger coverage across Chinese and English queries.
+- Localized prompt examples and trigger terms for Chinese, English, Korean, Japanese, French, and Spanish.
 - Deterministic Meihua Yishu calculator for main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
+- Reproducible Tarot draw helper with spread, seed, card positions, and upright/reversed output.
+- Privacy scan script for public examples before publishing.
 - Lightweight validation script for skill package health checks.
 - Safety boundaries for medical, legal, financial, death, disaster, and personal safety topics.
 - Progressive disclosure: a compact `SKILL.md`, detailed method files in `references/`, and executable support in `scripts/`.
@@ -104,7 +107,7 @@ Analyze this workstation layout with Feng Shui direction logic. My seat faces so
 ### Tarot Example
 
 ```text
-Use a seven-card Tarot spread to read relationship dynamics only. Give the anchor card, obstacle, turning point, likely action, and verification signs.
+Draw a five-card Tarot spread for a career decision. Show the seed, card positions, upright/reversed cards, verdict, action, and verification signs.
 ```
 
 ## Meihua Yishu Calculator
@@ -124,15 +127,25 @@ python scripts/meihua_calc.py num 22 5 18
 
 Output includes main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
 
+## Tarot Draw Helper
+
+The helper script provides reproducible symbolic draws. It outputs card names only, not copyrighted art or long card text.
+
+```bash
+python scripts/tarot_draw.py --spread relationship --question "Will this collaboration mature?" --seed 42
+python scripts/tarot_draw.py --spread five --question "Career decision" --json
+```
+
 ## Validate the Skill
 
 Run the local validator after editing files:
 
 ```bash
 python scripts/validate_skill.py
+python scripts/privacy_check.py
 ```
 
-The validator checks required files, `SKILL.md` frontmatter, local reference links, and the Meihua calculator smoke test.
+The validator checks required files, `SKILL.md` frontmatter, local reference links, and script smoke tests. The privacy scan blocks accidental publication of private names, workplace facts, family facts, tokens, or sensitive details.
 
 ## Repository Structure
 
@@ -145,12 +158,15 @@ metaphysics-synthesis-skill/
 │   ├── fengshui.md
 │   ├── liuyao.md
 │   ├── meihua.md
+│   ├── method-contracts.md
 │   ├── router.md
 │   ├── output-templates.md
 │   ├── examples.md
 │   ├── sources.md
 │   └── tarot.md
 ├── scripts/meihua_calc.py
+├── scripts/tarot_draw.py
+├── scripts/privacy_check.py
 ├── scripts/validate_skill.py
 ├── llms.txt
 └── README.*.md

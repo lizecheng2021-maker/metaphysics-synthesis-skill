@@ -11,10 +11,15 @@ Este repositorio no es solo un prompt de adivinación. Es un método reutilizabl
 - skill de adivinación con IA
 - skill Codex para BaZi
 - asistente IA de astrología china
+- lectura BaZi cuatro pilares
 - calculadora Meihua Yishu
+- I Ching presagio Meihua
 - flujo Liuyao para IA
+- seis líneas Najia
 - análisis Feng Shui de direcciones
+- Feng Shui oficina puesto de trabajo
 - prompt de Tarot con IA
+- tirada de tarot carta invertida
 - skill de metafísica china para agentes IA
 
 ## Sistemas compatibles
@@ -32,7 +37,14 @@ Este repositorio no es solo un prompt de adivinación. Es un método reutilizabl
 - Separa veredicto, evidencia, tiempo, acción y puntos de verificación.
 - Distingue conclusiones de alta confianza de inferencias de baja confianza.
 - Analiza cada sistema por separado antes de sintetizar.
+- Marca cada método como `runnable`, `partial` o `blocked`.
+- Separa los datos calculables de BaZi de la interpretación.
+- Fija las entradas de Meihua Yishu: hora, números y presagio externo.
+- Mantiene las seis líneas Liuyao en orden de abajo hacia arriba.
+- Lee Feng Shui por forma y entorno antes de fórmulas direccionales.
+- Proporciona tiradas de Tarot reproducibles con spread, seed y cartas derechas/invertidas.
 - Incluye un script para calcular la estructura de Meihua Yishu.
+- Incluye un script de tirada Tarot y un control de privacidad antes de publicar.
 - Define límites de seguridad para temas sensibles.
 
 ## Instalación

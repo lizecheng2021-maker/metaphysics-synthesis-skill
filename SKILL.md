@@ -21,6 +21,7 @@ Default boundaries:
 ## Fast Router
 
 Read [references/router.md](references/router.md) when the question mixes multiple systems, asks "which method should I use?", repeats a prior divination, or demands "不要串联记忆 / 单卦 / 严格按 skill".
+Read [references/method-contracts.md](references/method-contracts.md) when normalizing inputs, writing localized docs/examples, deciding whether a method is runnable, or publishing public-facing examples.
 
 Default routing:
 
@@ -32,6 +33,8 @@ Default routing:
 - If the user provides a system explicitly, honor that system first and avoid blending unless asked.
 
 If a question contains multiple unrelated targets, split it before reading. Example: "promotion timing" and "health trend" should be separate readings unless the user asks for synthesis.
+
+Before synthesis, assign each requested method a status: `runnable`, `partial`, or `blocked`. Only synthesize from runnable methods and clearly bounded partial methods. Do not fill blocked facts with imagination.
 
 ## Decisive Output Contract
 
@@ -67,7 +70,7 @@ Reliability tiers:
 - **梅花易数/邵雍象数**: Use for near events, sudden questions, external omens, practical timing, "what is moving now." Read [references/meihua.md](references/meihua.md).
 - **六爻/纳甲**: Use for concrete outcomes involving roles, contracts, bosses, salary, product traction, relationships with a specific person, property, and process details. Read [references/liuyao.md](references/liuyao.md).
 - **风水/方位**: Use for workspace/home layout, seating, directions, bosses/doors/windows/flow, and environmental symbolism. Read [references/fengshui.md](references/fengshui.md).
-- **塔罗**: Use for psychological dynamics, relationship texture, choices, and symbolic reflection, especially when a spread/cards are provided. Read [references/tarot.md](references/tarot.md).
+- **塔罗**: Use for psychological dynamics, relationship texture, choices, and symbolic reflection, especially when a spread/cards are provided. If the user asks the assistant to draw cards, use `scripts/tarot_draw.py` and report the seed. Read [references/tarot.md](references/tarot.md).
 - **Output templates**: Read [references/output-templates.md](references/output-templates.md) when the user wants a strict format, multilingual examples, or a clean public-facing reading.
 - **Examples**: Read [references/examples.md](references/examples.md) when improving prompts, docs, or trigger coverage.
 
@@ -75,19 +78,23 @@ Reliability tiers:
 
 1. Restate the question in one sentence. If it contains multiple unrelated questions, say which parts the current reading can cover and which should be separated.
 2. Name the system(s) used and why.
-3. Validate inputs:
+3. Normalize the request into the unified input card from [references/method-contracts.md](references/method-contracts.md), then validate inputs:
    - 八字: calendar type, birth date/time/place, gender, whether exact or uncertain.
    - 梅花: numbers/time/object/outer omen, and whether it is a new question.
    - 六爻: question, time, six lines from bottom to top, location/time zone, outer omen.
    - 风水: sitting/facing direction, floor plan or relative positions, doors/windows/traffic.
    - 塔罗: deck/system, cards, positions, upright/reversed.
-4. Apply the input gate:
+4. Mark method status:
+   - `runnable`: enough inputs for method-grade reading or deterministic script output.
+   - `partial`: enough for a bounded symbolic reading but not enough for full calculation.
+   - `blocked`: key facts are missing; state the blocker instead of inventing.
+5. Apply the input gate:
    - If the user asks "不要记忆 / 不串联", ignore prior readings except direct facts in the current prompt.
    - If the same unchanged question has already been read, do not recast; compare and synthesize prior outputs instead.
    - If the user asks for an exact value, give a bounded symbolic value plus the evidence tier; do not pretend symbolic methods create measurement-grade certainty.
-5. Analyze within the chosen system before synthesis. Do not jump straight to a modern story.
-6. Decide, then explain: verdict, strength, timing, reason, action, confirmation/falsification.
-7. If combining systems, let each system speak first, then synthesize only the overlapping signals.
+6. Analyze within the chosen system before synthesis. Do not jump straight to a modern story.
+7. Decide, then explain: verdict, strength, timing, reason, action, confirmation/falsification.
+8. If combining systems, let each system speak first, then synthesize only the overlapping signals.
 
 ## Answer Shape
 
@@ -143,3 +150,5 @@ Avoid:
 ## Skill Maintenance
 
 If the user asks to improve this skill, update the relevant reference file rather than bloating this SKILL.md. Keep method details in references and keep this file as routing/workflow. Record public source notes in [references/sources.md](references/sources.md).
+
+Before publishing public examples, run `scripts/privacy_check.py`. Before shipping the package, run `scripts/validate_skill.py`.

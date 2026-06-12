@@ -8,6 +8,22 @@ These sources orient the skill. They are not exhaustive authorities and do not p
 - Use modern tutorials to see how practitioners operationalize the method.
 - Use reader/community signals such as Douban or Goodreads only as popularity/validation signals, not proof of truth.
 - Mark old sources as stable tradition rather than current science.
+- For AI skill/package design, inspect public repositories for input contracts, scripts, routers, localization, and validation patterns. Borrow architecture, not private data or copyrighted prose.
+
+## Public GitHub Skill / Tool Benchmarks
+
+- `cantian-ai/bazi-persona-skill`: multilingual BaZi persona skill surface and cross-agent packaging: https://github.com/cantian-ai/bazi-persona-skill
+- `cantian-ai/bazi-mcp`: BaZi MCP/tooling emphasis on deterministic data and calculation service: https://github.com/cantian-ai/bazi-mcp
+- `jinchenma94/bazi-skill`: BaZi skill-style data collection and classical-analysis framing: https://github.com/jinchenma94/bazi-skill
+- `muyen/meihua-yishu`: Meihua AI skill with compact entrypoint, references, scripts, 体用, external omens, and timing guides: https://github.com/muyen/meihua-yishu
+- `daman-ovo-0404/tarot-skill`: Tarot skill packaging with card/spread resources and draw workflow: https://github.com/daman-ovo-0404/tarot-skill
+- `bopo/najia`: Python Najia/Liuyao fields such as hexagram marks, moving lines, 六亲, 六神, 世应, 纳甲: https://github.com/bopo/najia
+- `likeSo/liu-yao`: Liuyao app with multiple casting methods and calendar parsing: https://github.com/likeSo/liu-yao
+- `voidforall/fengshui.skill`: Feng Shui skill packaging pattern and persona surface: https://github.com/voidforall/fengshui.skill
+- `shizhilya/yuan`: multi-system metaphysics API/MCP/skill project; useful for router and module separation ideas: https://github.com/shizhilya/yuan
+- `ai-freer/fortune-skill`: fortune skill structure with privacy checking and report templates: https://github.com/ai-freer/fortune-skill
+- `Brhiza/mingyu`: multi-system fortune-telling service structure: https://github.com/Brhiza/mingyu
+- `eamanc-lab/fortune-telling-skills`: multi-skill hub structure for Chinese metaphysics agent skills: https://github.com/eamanc-lab/fortune-telling-skills
 
 ## BaZi / 子平
 

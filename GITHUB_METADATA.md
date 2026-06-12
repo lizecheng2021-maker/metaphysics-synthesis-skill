@@ -9,7 +9,7 @@ metaphysics-synthesis-skill
 Suggested repository description:
 
 ```text
-Codex skill for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot synthesis with decisive readings and bounded evidence.
+Codex skill for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot synthesis with input contracts, scripts, decisive readings, and bounded evidence.
 ```
 
 Suggested homepage:
@@ -31,7 +31,12 @@ liuyao
 feng-shui
 tarot
 tarot-reading
+tarot-spread
 i-ching
+four-pillars
+zi-ping
+najia
+geomancy
 chinese-astrology
 fortune-telling
 chinese-metaphysics

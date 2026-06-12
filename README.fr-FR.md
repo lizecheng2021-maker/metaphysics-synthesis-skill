@@ -11,10 +11,15 @@ Ce dépôt n'est pas un simple prompt de divination. Il fournit une méthode ré
 - skill IA de divination
 - skill Codex pour BaZi
 - assistant IA pour astrologie chinoise
+- lecture BaZi quatre piliers
 - calculateur Meihua Yishu
+- Yi King présage Meihua
 - méthode Liuyao pour IA
+- six lignes Najia
 - analyse Feng Shui des directions
+- Feng Shui bureau poste de travail
 - prompt Tarot IA
+- tirage tarot carte inversée
 - agent IA pour métaphysique chinoise
 
 ## Systèmes pris en charge
@@ -32,7 +37,14 @@ Ce dépôt n'est pas un simple prompt de divination. Il fournit une méthode ré
 - Sépare le verdict, les preuves, le timing, l'action et les points de vérification.
 - Distingue les conclusions fortes des hypothèses faibles.
 - Analyse chaque système séparément avant toute synthèse.
+- Marque chaque méthode comme `runnable`, `partial` ou `blocked`.
+- Sépare les faits calculables du BaZi de leur interprétation.
+- Fixe les entrées du Meihua Yishu: heure, nombres et présage externe.
+- Impose l'ordre des six lignes Liuyao de bas en haut.
+- Lit le Feng Shui par la forme et l'environnement avant les formules directionnelles.
+- Fournit un tirage Tarot reproductible avec spread, seed et cartes droites/inversées.
 - Inclut un script de calcul structurel pour le Meihua Yishu.
+- Inclut un script de tirage Tarot et un contrôle de confidentialité avant publication.
 - Définit des limites de sécurité pour les sujets sensibles.
 
 ## Installation

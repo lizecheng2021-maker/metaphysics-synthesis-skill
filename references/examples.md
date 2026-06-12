@@ -38,10 +38,50 @@ Use Liuyao for a concrete job outcome. Lines from bottom to top are 12 / 1 / 4 /
 我的朝向是东南 146 度，主管在西北 332 度，P8 在东方 101 度，大领导在南方 196 度。按风水方位看可见度和汇报机会。
 ```
 
+```text
+Assess this office seat with Feng Shui: facing 146 degrees, door on my left, manager behind-right, window in front. Start with form, then direction symbolism.
+```
+
 ## Tarot
 
 ```text
 用七张塔罗牌看这段关系的主线：相遇方式、阻碍、对方行动、我的行动、转折点、结果、验证点。
+```
+
+```text
+Draw a five-card tarot spread for my career decision. Show the seed, positions, upright/reversed cards, verdict, action, and verification signs.
+```
+
+## Localized Prompt Examples
+
+Chinese:
+
+```text
+用八字和六爻看这次岗位机会：先列输入是否足够，再给断语、依据、应期、行动和验证点。
+```
+
+Korean:
+
+```text
+사주팔자로 2026-2030년 커리어 흐름을 보고, 매화역수로 이번 프로젝트의 가까운 전개를 보세요. 확신도와 확인 신호를 구분해 주세요.
+```
+
+Japanese:
+
+```text
+四柱推命で今後三年間の仕事運を見て、梅花易数でこの企画の動き出す時期を判断してください。根拠と検証ポイントを分けてください。
+```
+
+French:
+
+```text
+Analysez cette question avec le BaZi et un tirage de tarot. Séparez les faits calculables, l'interprétation symbolique, le niveau de confiance et les actions concrètes.
+```
+
+Spanish:
+
+```text
+Usa BaZi para la tendencia de vida y una tirada de tarot para la decisión actual. Dame veredicto, base, plazo, acción y señales de verificación.
 ```
 
 ## Synthesis

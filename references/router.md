@@ -2,6 +2,8 @@
 
 Use this file when the user asks which divination method to use, combines multiple systems, asks for "strict single reading", or repeats questions.
 
+For serious synthesis, read `references/method-contracts.md` first and normalize each method to `runnable`, `partial`, or `blocked`.
+
 ## Intent Router
 
 | User intent | Best system | Why |
@@ -42,6 +44,18 @@ Need facing direction, sitting direction if known, relative positions, doors/win
 ### Tarot
 
 Need cards and positions if already drawn. If cards are not provided and the user asks the assistant to draw, make clear it is a simulated draw for reflection.
+
+## Localized Trigger Rules
+
+Prefer local search and prompt terms, not literal translations:
+
+- Chinese: 八字/子平/四柱, 梅花易数/邵雍/外应, 六爻/纳甲/世应, 风水/方位/飞星, 塔罗/牌阵/正逆位.
+- Korean: 사주/사주팔자, 매화역수, 육효/납갑, 풍수/방위, 타로/카드 배열.
+- Japanese: 四柱推命/命式, 梅花易数/易占, 六爻/納甲, 風水/家相/方位, タロット/スプレッド.
+- French: BaZi/quatre piliers, Yi King/Meihua, Liuyao/six lignes, Feng Shui/géomancie, tarot/tirage.
+- Spanish: BaZi/cuatro pilares, I Ching/Meihua, Liuyao/seis líneas, Feng Shui/geomancia, tarot/tirada.
+
+When improving public README files, include one localized example per language and per major method family when space allows.
 
 ## Repeat Reading Policy
 
