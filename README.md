@@ -1,42 +1,64 @@
 # Metaphysics Synthesis Skill
 
-Deep Chinese and Western divination synthesis for AI coding agents.
+An AI agent skill for structured divination, Chinese metaphysics, BaZi reading, Meihua Yishu, Liuyao, Feng Shui direction analysis, and Tarot interpretation.
 
-This repository packages a Codex-compatible skill for structured metaphysical analysis across **BaZi**, **Meihua Yishu**, **Liuyao**, **Feng Shui**, and **Tarot**. It is designed for assistants that need decisive readings, method-grade evidence, timing windows, and grounded real-world calibration.
+This repository packages a Codex-compatible skill for assistants that need decisive but bounded metaphysical readings. It combines classical Chinese systems and Western Tarot with a repeatable workflow: verdict, evidence, timing, action, and verification.
 
-> Cultural and reflective use only. This skill must not replace medical, legal, financial, mental-health, or safety advice.
+> Cultural and reflective use only. This skill does not replace medical, legal, financial, mental-health, emergency, or safety advice.
+
+## Languages
+
+- [English](README.md)
+- [简体中文](README.zh-CN.md)
+- [한국어](README.ko-KR.md)
+- [日本語](README.ja-JP.md)
+- [Français](README.fr-FR.md)
+- [Español](README.es-ES.md)
+
+## What This Skill Is For
+
+Use this skill when an AI assistant needs a reusable workflow for questions such as:
+
+- "How do I analyze a BaZi chart for career, wealth, marriage, and health timing?"
+- "Can Meihua Yishu read an omen, a timestamp, or sudden event movement?"
+- "How should Liuyao handle a concrete outcome involving a job, contract, boss, salary, or product launch?"
+- "Can Feng Shui direction analysis explain workspace visibility, seating, and environmental flow?"
+- "How can Tarot describe relationship dynamics, choices, and psychological turning points?"
+- "How can an AI agent give a decisive divination reading without becoming vague, fatalistic, or unsafe?"
 
 ## Why This Skill
 
-Most divination prompts fail in one of two ways: they either give vague comfort, or they overfit one symbol into a dramatic prediction. This skill is built to avoid both.
+Most AI divination prompts fail in one of two ways: they either comfort the user with vague language, or they overfit one symbol into a dramatic prediction. This skill is designed to avoid both.
 
-It enforces a repeatable workflow:
+It enforces a repeatable method:
 
-- Separate systems before synthesis.
-- State a clear verdict first.
-- Show the evidence path without exposing private chain-of-thought.
-- Distinguish high-confidence judgments from low-confidence inference.
-- Use direct facts and measurable signals to calibrate symbolic readings.
+- Choose the right system before interpreting.
+- Keep BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot internally coherent before synthesis.
+- Give a clear verdict first when the evidence converges.
+- Show a method-grade audit trail without exposing private chain-of-thought.
+- Separate high-confidence judgment from low-confidence inference.
+- Use real-world facts and measurable signals to calibrate symbolic readings.
 - Avoid repeatedly recasting the same unchanged question.
 
 ## Supported Systems
 
 | System | Best For | Reference |
 | --- | --- | --- |
-| BaZi / Zi Ping | life structure, decade luck, career, wealth, marriage, health tendencies | `references/bazi.md` |
-| Meihua Yishu | sudden events, omens, timing, practical movement, "what is moving now" | `references/meihua.md` |
-| Liuyao / Najia | concrete outcomes, roles, contracts, bosses, salary, product traction | `references/liuyao.md` |
-| Feng Shui / Direction | workspace layout, directions, boss position, flow, visibility | `references/fengshui.md` |
-| Tarot | relationship texture, psychology, choices, symbolic reflection | `references/tarot.md` |
+| BaZi / Zi Ping | Life structure, decade luck, career, wealth, marriage, health tendencies | `references/bazi.md` |
+| Meihua Yishu | Omens, timestamps, sudden events, practical timing, near-term movement | `references/meihua.md` |
+| Liuyao / Najia | Concrete outcomes, roles, contracts, bosses, salary, product traction | `references/liuyao.md` |
+| Feng Shui / Direction | Workspace layout, directions, seating, doors, flow, visibility | `references/fengshui.md` |
+| Tarot | Relationship texture, psychology, choices, symbolic reflection | `references/tarot.md` |
 
 ## Key Features
 
-- Decisive Chinese output format: `断语 -> 依据 -> 应期/强弱 -> 行动 -> 验证点`.
-- Evidence hierarchy for conflicting signals.
-- Meihua calculator script for deterministic hexagram structure.
-- Safety boundaries for health, law, finance, death, and disasters.
-- Public source notes for method orientation.
-- Progressive disclosure: small `SKILL.md`, detailed method files in `references/`.
+- Decisive output pattern: verdict, evidence, timing, action, and verification.
+- Evidence hierarchy for conflicting symbolic signals.
+- System selection rules for BaZi, Meihua Yishu, Liuyao, Feng Shui, and Tarot.
+- Deterministic Meihua Yishu calculator for main hexagram, moving line, mutual hexagram, changed hexagram, and Ti/Yong relation.
+- Safety boundaries for medical, legal, financial, death, disaster, and personal safety topics.
+- Progressive disclosure: a compact `SKILL.md`, detailed method files in `references/`, and executable support in `scripts/`.
+- AI-readable `llms.txt` summary for agent and answer-engine discovery.
 
 ## Install
 
@@ -51,23 +73,39 @@ Restart Codex or reload skills if your environment requires it.
 
 ## Usage Examples
 
-Ask in Chinese or English:
+### BaZi Reading Example
 
 ```text
-用梅花易数严格看这个项目上线后是否能带来转正机会。起心动念时间是2026-06-12 10:36，外应是西北方主管在讨论排期。
+Analyze this BaZi chart for 2026-2036 career and wealth timing. Separate natal structure, decade luck, annual triggers, high-confidence conclusions, and low-confidence speculation.
 ```
+
+### Meihua Yishu Example
 
 ```text
-Analyze this BaZi chart for 2026-2036 career and wealth timing. Separate high-confidence structure from low-confidence speculation.
+Use Meihua Yishu to read whether this product launch can create a visible career breakthrough. The question arose at 2026-06-12 10:36, and the external omen was a manager discussing scheduling in the northwest direction.
 ```
+
+### Liuyao Example
 
 ```text
-Use Tarot, not Liuyao, to read the relationship dynamics. Give the anchor card, obstacle, turning point, and verification signs.
+Use Liuyao to judge whether this project can become the main evidence for a promotion. The six lines from bottom to top are 5 / 4 / 25 / 12 / 22 / 17.
 ```
 
-## Meihua Calculator
+### Feng Shui Example
 
-The helper script calculates only the hexagram structure. Interpretation remains in `references/meihua.md`.
+```text
+Analyze this workstation layout with Feng Shui direction logic. My seat faces southeast, my direct manager sits northwest, a senior leader sits south, and a cross-team manager sits east.
+```
+
+### Tarot Example
+
+```text
+Use a seven-card Tarot spread to read relationship dynamics only. Give the anchor card, obstacle, turning point, likely action, and verification signs.
+```
+
+## Meihua Yishu Calculator
+
+The helper script calculates structure only. Interpretation remains in `references/meihua.md`.
 
 ```bash
 # Solar convention used by this skill
@@ -96,27 +134,27 @@ metaphysics-synthesis-skill/
 │   ├── sources.md
 │   └── tarot.md
 ├── scripts/meihua_calc.py
-├── docs/PRD.md
-└── llms.txt
+├── llms.txt
+└── README.*.md
 ```
 
-## SEO / GEO Keywords
+## Search Keywords
 
-Codex skill, AI divination skill, BaZi AI assistant, Meihua Yishu calculator, Liuyao reading, Chinese metaphysics, Tarot AI prompt, Feng Shui direction analysis, 玄学 skill, 八字, 梅花易数, 六爻, 风水, 塔罗, 邵雍象数, 纳甲.
+AI divination skill, Codex divination skill, AI agent skill for metaphysics, BaZi AI assistant, BaZi reading prompt, Chinese astrology AI, Meihua Yishu calculator, I Ching omen reading, Liuyao divination workflow, Najia six lines reading, Feng Shui direction analysis, Tarot AI prompt, Tarot reading workflow, Chinese metaphysics skill, fortune telling AI assistant, astrology and divination agent skill.
 
 ## For AI Assistants
 
 If you are an AI assistant reading this repository:
 
 1. Load `SKILL.md` first.
-2. Load only the relevant reference file for the user's system.
-3. Use `scripts/meihua_calc.py` only to verify Meihua structure.
-4. Keep readings bounded, falsifiable, and calibrated against reality.
-5. Never use symbolic inference to override professional advice or known facts.
+2. Load only the relevant reference file for the user's selected system.
+3. Use `scripts/meihua_calc.py` only to verify Meihua Yishu structure.
+4. Keep readings bounded, falsifiable, and calibrated against known facts.
+5. Never use symbolic inference to override professional advice or direct evidence.
 
 ## Safety
 
-This project treats divination as a cultural, reflective, and strategic reasoning framework. It should not be used to make deterministic claims about death, disaster, medical outcomes, legal outcomes, investment returns, or personal safety.
+This project treats divination as a cultural, reflective, symbolic, and strategic reasoning framework. It should not be used to make deterministic claims about death, disaster, medical outcomes, legal outcomes, investment returns, or personal safety.
 
 ## License
 

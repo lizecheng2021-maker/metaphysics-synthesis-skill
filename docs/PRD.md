@@ -112,4 +112,4 @@ GEO策略：
 ## 9. 迭代日志
 
 - 2026-06-12：创建 GitHub 发布包，补充 README、中文 README、llms.txt、LICENSE、GITHUB_METADATA、PRD。
-
+- 2026-06-12：基于 Google Search Central、GitHub README/topics 文档和公开 agent skill 仓库写法，优化 SEO/GEO；英文 README 纯英文，新增中文、韩文、日文、法文、西文独立介绍和案例；更新 `llms.txt` 与 skill 触发描述。

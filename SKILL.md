@@ -1,6 +1,6 @@
 ---
 name: metaphysics-synthesis
-description: Deep metaphysics synthesis for Chinese and Western divination. Use when the user asks for 玄学、命理、算命、运势、八字/子平命理、梅花易数/邵雍象数、六爻/纳甲、风水/方位、塔罗、命运/婚恋/事业/财运/健康趋势, asks for 果断断语 or master-style metaphysical reasoning, or asks to combine divination with real-world evidence. Applies classical method lineages, decisive verdicts, evidence tiers, timing signals, and avoids one-point shallow readings.
+description: Deep metaphysics synthesis and AI divination skill for Chinese and Western divination. Use when the user asks for 玄学、命理、算命、运势、八字/子平命理、BaZi reading、Chinese astrology、梅花易数/邵雍象数、Meihua Yishu、I Ching omen reading、六爻/纳甲、Liuyao/Najia、风水/方位、Feng Shui direction analysis、塔罗/Tarot reading、命运/婚恋/事业/财运/健康趋势, asks for 果断断语 or master-style metaphysical reasoning, or asks to combine divination with real-world evidence. Applies classical method lineages, decisive verdicts, evidence tiers, timing signals, and avoids one-point shallow readings.
 ---
 
 # Metaphysics Synthesis

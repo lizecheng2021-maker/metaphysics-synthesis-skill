@@ -30,6 +30,10 @@ meihua-yishu
 liuyao
 feng-shui
 tarot
+tarot-reading
+i-ching
+chinese-astrology
+fortune-telling
 chinese-metaphysics
 prompt-engineering
 llm-tools
@@ -40,4 +44,3 @@ Suggested social preview text:
 ```text
 Structured metaphysics synthesis for AI agents: BaZi, Meihua Yishu, Liuyao, Feng Shui, Tarot.
 ```
-
